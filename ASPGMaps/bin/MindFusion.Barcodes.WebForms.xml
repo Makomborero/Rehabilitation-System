@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Barcodes.WebForms</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Barcodes.WebForms.InvalidCode">
+            <summary>
+            A placeholder to use as model when content is invalid for current barcode format.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Barcodes.WebForms.GdiBarcodeCanvas">
+            <summary>
+            Implements the BarcodeCanvas interface using GDI+ API.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Barcodes.WebForms.BarcodeLabel">
+            <summary>
+            Represents a barcode label.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Barcodes.WebForms.BarcodeLabel.#ctor">
+            <summary>
+            Initializes a new instance of the BarcodeLabel class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Barcodes.WebForms.BarcodeLabel.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.Content">
+            <summary>
+            Gets or sets the text or numeric code that should be represented as barcode symbol.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.Format">
+            <summary>
+            Gets or sets the barcode format.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.QRCorrectionLevel">
+            <summary>
+            Gets or sets the correction level of QR barcodes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.ForeColor">
+            <summary>
+            Gets or sets the color of the barcode modules.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.BackColor">
+            <summary>
+            Gets or sets the background color.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.Font">
+            <summary>
+            Gets or sets the label  font.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.AutoSize">
+            <summary>
+            Gets or sets a value indicating whether the control is 
+            automatically resized to display its entire contents.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.LicenseKey">
+            <summary>
+            Gets or sets the license key of the control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Barcodes.WebForms.BarcodeLabel.ImageGenLocation">
+            <summary>
+            URL to the ImageGen.ashx file, used to generate the barcode images.
+            This property is rendered as a SRC attribute for the label's IMG element.
+            </summary>
+        </member>
+    </members>
+</doc>

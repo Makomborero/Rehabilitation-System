@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Common.WebForms</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Common.WebForms.ZoomControl">
+            <summary>
+            ZoomControl lets users zoom and pan a target web control, 
+            which implements the IZoomTarget interface.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.#ctor">
+            <summary>
+            Initializes a new instance of the ZoomControl class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.OnInit(System.EventArgs)">
+            <summary>
+            WebControl.OnInit override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.OnPreRender(System.EventArgs)">
+            <summary>
+            WebControl.OnPreRender override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderBeginTag override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            IPostBackDataHandler.LoadPostData implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControl.RaisePostDataChangedEvent">
+            <summary>
+            IPostBackDataHandler.RaisePostDataChangedEvent implementation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.Target">
+            <summary>
+            Gets or sets the target control associated with this ZoomControl.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.TargetId">
+            <summary>
+            Gets or sets the id of the target control associated with this ZoomControl.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.MinZoomFactor">
+            <summary>
+            The minimum zoom level allowed to set through this control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.MaxZoomFactor">
+            <summary>
+            The maximum zoom level allowed to set through this control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ZoomFactor">
+            <summary>
+            Gets or sets the current zoom level.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ZoomStep">
+            <summary>
+            Gets or sets the amount by which to change zoom level when + and - buttons are clicked.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ScrollStep">
+            <summary>
+            Gets or sets the scroll offset added when users click the pan arrows.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.AutoPostBack">
+            <summary>
+            Gets or sets a value indicating whether a postback to the server automatically occurs when the value of the control changes.
+            </summary>
+            <remarks>This property is used only if ClientSideMode is set to ClientSideMode.ImageMap.</remarks>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.SnapToZoomStep">
+            <summary>
+            Gets or sets whether the trackbar should snap to ZoomStep values when dragged.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ShowLabel">
+            <summary>
+            Gets or sets a value indicating whether the label that shows the current zoom level should be visible.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.TickPosition">
+            <summary>
+            Gets or sets the current tick position of the trackbar.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.Padding">
+            <summary>
+            Gets or sets the padding of the control's contents.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.Fill">
+            <summary>
+            Gets or sets the brush used to fill the ZoomControl elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.BackColor">
+            <summary>
+            Gets or sets the background color of the control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ActiveColor">
+            <summary>
+            Gets or sets the color used to render depressed buttons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.BorderColor">
+            <summary>
+            Gets or sets the color of ZoomControl elements' borders.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.InnerColor">
+            <summary>
+            Gets or sets the color of plus, minus and arrow icons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ShadowColor">
+            <summary>
+            Gets or sets the shadow color.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.TextColor">
+            <summary>
+            Gets or sets the brush of the the label that shows the current zoom level.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.CornerRadius">
+            <summary>
+            Gets or sets the corner radius of rounded child elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ClientSideMode">
+            <summary>
+            Specifies the method used for handling user interaction and drawing on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ClientScriptMode">
+            <summary>
+            Gets or sets a value indicating which library will be used in the control's client-side scripts.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.JQueryLocation">
+            <summary>
+            Gets or sets the URL to the JQuery script file.
+            </summary>
+            <remarks>
+            This property is used only if ClientScriptMode is set to ClientScriptMode.JQuery.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.MsAjaxLocation">
+            <summary>
+            Gets or sets the URL to the Microsoft Ajax script file.
+            </summary>
+            <remarks>
+            This property is used only if ClientScriptMode is set to ClientScriptMode.MsAjax.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControl.ImageGenLocation">
+            <summary>
+            URL to the ImageGen.ashx file, used to generate the barcode images.
+            This property is rendered as a SRC attribute for the label's IMG element.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.IZoomTarget">
+            <summary>
+            Specifies the capabilities required by ZoomControl from its target controls.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.SetZoomLevel(System.Double)">
+            <summary>
+            Sets a new zoom level.
+            </summary>
+            <param name="zoom">A float value specifying the zoom level.</param>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.GetZoomLevel">
+            <summary>
+            Gets the current zoom level.
+            </summary>
+            <returns>A float value specifying the zoom level.</returns>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.SetZoomStep(System.Double)">
+            <summary>
+            Sets a new zoom step.
+            </summary>
+            <param name="zoomStep">A float value specifying the zoom step.</param>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.GetZoomStep">
+            <summary>
+            Gets the current zoom step.
+            </summary>
+            <returns>A float value specifying the zoom step.</returns>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.SetScrollX(System.Single)">
+            <summary>
+            Sets the horizontal scroll position.
+            </summary>
+            <param name="scrollX">A float value specifying the horizontal scroll position.</param>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.GetScrollX">
+            <summary>
+            Sets the horizontal scroll position.
+            </summary>
+            <returns>A float value specifying the horizontal scroll position.</returns>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.SetScrollY(System.Single)">
+            <summary>
+            Sets the vertical scroll position.
+            </summary>
+            <param name="scrollY">A float value specifying the vertical scroll position.</param>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.IZoomTarget.GetScrollY">
+            <summary>
+            Gets the vertical scroll position.
+            </summary>
+            <returns>A float value specifying the vertical scroll position.</returns>
+        </member>
+        <member name="E:MindFusion.Common.WebForms.IZoomTarget.ZoomLevelChanged">
+            <summary>
+            Raised to notify that the target's zoom level has changed.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ControlHelper">
+            <summary>
+            Provides helper methods for working with the ASP.NET page controls hierarchy.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ControlHelper.FindControlRecursive(System.Web.UI.Control,System.String)">
+            <summary>
+            Recursively looks for a child control with the specified ID.
+            </summary>
+            <param name="root">The parent control from which to start the search.</param>
+            <param name="id">Specifies the ID of the child control to find.</param>
+            <returns>A reference to the control, or null if no control with the specified ID has been found.</returns>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ImageHandler">
+            <summary>
+            Handles image generation for the various MindFusion controls.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ImageHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            IHttpHandler.ProcessRequest implementation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ImageHandler.IsReusable">
+            <summary>
+            IHttpHandler.IsReusable implementation.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ZoomControlConverter">
+            <summary>
+            Serializes ZoomControl instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControlConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ZoomControlConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.ZoomControlConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.BrushConverter">
+            <summary>
+            Serializes System.Drawing.Brush instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.BrushConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.BrushConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Common.WebForms.BrushConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ConverterUtils">
+            <summary>
+            Contains helper convert methods.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ClientManager">
+            <summary>
+            Adds references to common scripts. 
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ClientManager.#ctor">
+            <summary>
+            Initializes a new instance of the ClientManager class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Common.WebForms.ClientManager.AddScriptsToPage(System.Web.UI.Page)">
+            <summary>
+            Adds references to common scripts to the provided page.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientManager.AddScriptReferences">
+            <summary>
+            Gets or sets a value indicating whether the control should render references to 
+            the client scripts.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientManager.ClientScriptMode">
+            <summary>
+            Gets or sets a value indicating which library will be used in the control's client-side scripts.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientManager.JQueryLocation">
+            <summary>
+            Gets or sets the URL to the JQuery script file.
+            </summary>
+            <remarks>
+            This property is used only if ClientSideMode is set to ClientSideMode.JQuery.
+            </remarks>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientManager.MsAjaxLocation">
+            <summary>
+            Gets or sets the URL to the Microsoft Ajax script file.
+            </summary>
+            <remarks>
+            This property is used only if ClientSideMode is set to ClientSideMode.MsAjax.
+            </remarks>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ClientScriptMode">
+            <summary>
+            Specifies the implementation used in the control's client-side scripts.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientScriptMode.MsAjax">
+            <summary>
+            Indicates that MicrosoftAjax script will be used.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientScriptMode.JQuery">
+            <summary>
+            Indicates that JQuery script will be used.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.TickPosition">
+            <summary>
+            Specifies the position of trackbar ticks.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.TickPosition.None">
+            <summary>
+            There are no ticks rendered.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.TickPosition.Left">
+            <summary>
+            Ticks are rendered on the left side of the trackbar.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.TickPosition.Right">
+            <summary>
+            Ticks are rendered on the right side of the trackbar.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.TickPosition.Both">
+            <summary>
+            Ticks are rendered on both sides of the trackbar.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Common.WebForms.ClientSideMode">
+            <summary>
+            Specifies the method used for handling user interaction and drawing on the client side.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientSideMode.Canvas">
+            <summary>
+            The control is rendered on the client side using an HTML5 Canvas.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Common.WebForms.ClientSideMode.ImageMap">
+            <summary>
+            The control is rendered on the client side using an image and an HTML image map.
+            </summary>
+        </member>
+    </members>
+</doc>

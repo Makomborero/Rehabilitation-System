@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MyDatabaseModelStoreContainer">
+    <EntitySet Name="HotelMaster" EntityType="MyDatabaseModel.Store.HotelMaster" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="HotelMaster">
+    <Key>
+      <PropertyRef Name="HotelID" />
+    </Key>
+    <Property Name="HotelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="HotelArea" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="HotelName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="LocLat" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LocLong" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ReadMoreUrl" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+</Schema>

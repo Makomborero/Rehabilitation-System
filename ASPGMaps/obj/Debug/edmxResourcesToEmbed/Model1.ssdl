@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onlineexamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\MUNASHE NYAZENGA\VIDEOS\ITSEDITED\ASPGMAPS\ASPGMAPS\ASPGMAPS\ASPGMAPS\APP_DATA\ONLINEEXAM.MDF.dbo.TempHeart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TempHeart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Temp" Type="nvarchar" MaxLength="500" />
+    <Property Name="bmp" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityContainer Name="onlineexamModelStoreContainer">
+    <EntitySet Name="TempHeart" EntityType="Self.TempHeart" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[TempHeart].[Id] AS [Id], 
+[TempHeart].[Temp] AS [Temp], 
+[TempHeart].[bmp] AS [bmp]
+FROM [dbo].[TempHeart] AS [TempHeart]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,646 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1BE50B9-6DAE-4005-929A-009D08DB499B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITS</RootNamespace>
+    <AssemblyName>ITS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44339</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MindFusion.Common.WebForms, Version=1.0.8.400, Culture=neutral, PublicKeyToken=7d098e4a667bb349, processorArchitecture=MSIL" />
+    <Reference Include="MindFusion.Scheduling.WebForms, Version=3.2.1.400, Culture=neutral, PublicKeyToken=1f8404677be623be, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="admin\addadmin.aspx" />
+    <Content Include="admin\addquestion.aspx" />
+    <Content Include="admin\assets\css\bootstrap-grid.css" />
+    <Content Include="admin\assets\css\bootstrap-grid.min.css" />
+    <Content Include="admin\assets\css\bootstrap-reboot.css" />
+    <Content Include="admin\assets\css\bootstrap-reboot.min.css" />
+    <Content Include="admin\assets\css\bootstrap.css" />
+    <Content Include="admin\assets\css\bootstrap.min.css" />
+    <Content Include="admin\assets\css\custom.css" />
+    <Content Include="admin\assets\css\login.css" />
+    <Content Include="admin\assets\css\usercustom.css" />
+    <Content Include="admin\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="admin\assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="admin\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin\assets\image\login.jpg" />
+    <Content Include="admin\assets\image\logo.png" />
+    <Content Include="admin\assets\js\bootstrap.bundle.js" />
+    <Content Include="admin\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="admin\assets\js\bootstrap.js" />
+    <Content Include="admin\assets\js\bootstrap.min.js" />
+    <Content Include="admin\assets\js\custom.js" />
+    <Content Include="admin\assets\js\jquery.min.js" />
+    <Content Include="admin\category.aspx" />
+    <Content Include="admin\content.aspx" />
+    <Content Include="admin\deleteadmin.aspx" />
+    <Content Include="admin\detailsexamquestion.aspx" />
+    <Content Include="admin\editcategory.aspx" />
+    <Content Include="admin\editexam.aspx" />
+    <Content Include="admin\editquestion.aspx" />
+    <Content Include="admin\editsubject.aspx" />
+    <Content Include="admin\exam.aspx" />
+    <Content Include="admin\examdetails.aspx" />
+    <Content Include="admin\examquestion.aspx" />
+    <Content Include="admin\img\default_user.jpg" />
+    <Content Include="admin\img\unnamed.jpg" />
+    <Content Include="admin\Index.aspx" />
+    <Content Include="admin\login.aspx" />
+    <Content Include="admin\question.aspx" />
+    <Content Include="admin\resetpass.aspx" />
+    <Content Include="admin\result.aspx" />
+    <Content Include="admin\ScheduleEvent.aspx" />
+    <Content Include="admin\studentList.aspx" />
+    <Content Include="admin\subject.aspx" />
+    <Content Include="App_Data\onlineexam.mdf" />
+    <Content Include="App_Data\onlineexam_log.ldf">
+      <DependentUpon>onlineexam.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\css\bootstrap-grid.css" />
+    <Content Include="assets\css\bootstrap-grid.min.css" />
+    <Content Include="assets\css\bootstrap-reboot.css" />
+    <Content Include="assets\css\bootstrap-reboot.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\custom.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\usercustom.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\image\login.jpg" />
+    <Content Include="assets\image\logo.png" />
+    <Content Include="assets\js\bootstrap.bundle.js" />
+    <Content Include="assets\js\bootstrap.bundle.min.js" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="categoryitem.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="coursecontent.aspx" />
+    <Content Include="css\sb-admin-2.css" />
+    <Content Include="css\sb-admin-2.min.css" />
+    <Content Include="MainDashboard.aspx" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="img\default_user.jpg" />
+    <Content Include="img\unnamed.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="Library.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="mainmenu.aspx" />
+    <Content Include="MainWindow.aspx" />
+    <Content Include="MyLearningCalendar.aspx" />
+    <Content Include="MyProfile.aspx" />
+    <Content Include="myresult.aspx" />
+    <Content Include="question.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="RegisterUser.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StudentMenu.aspx" />
+    <Content Include="subjectexam.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="courseitem.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin.master.cs">
+      <DependentUpon>admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.master.designer.cs">
+      <DependentUpon>admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addadmin.aspx.cs">
+      <DependentUpon>addadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addadmin.aspx.designer.cs">
+      <DependentUpon>addadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\addquestion.aspx.cs">
+      <DependentUpon>addquestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\addquestion.aspx.designer.cs">
+      <DependentUpon>addquestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\category.aspx.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\category.aspx.designer.cs">
+      <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\content.aspx.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\content.aspx.designer.cs">
+      <DependentUpon>content.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\deleteadmin.aspx.cs">
+      <DependentUpon>deleteadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\deleteadmin.aspx.designer.cs">
+      <DependentUpon>deleteadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\detailsexamquestion.aspx.cs">
+      <DependentUpon>detailsexamquestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\detailsexamquestion.aspx.designer.cs">
+      <DependentUpon>detailsexamquestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editcategory.aspx.cs">
+      <DependentUpon>editcategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editcategory.aspx.designer.cs">
+      <DependentUpon>editcategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editexam.aspx.cs">
+      <DependentUpon>editexam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editexam.aspx.designer.cs">
+      <DependentUpon>editexam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editquestion.aspx.cs">
+      <DependentUpon>editquestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editquestion.aspx.designer.cs">
+      <DependentUpon>editquestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\editsubject.aspx.cs">
+      <DependentUpon>editsubject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\editsubject.aspx.designer.cs">
+      <DependentUpon>editsubject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\exam.aspx.cs">
+      <DependentUpon>exam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\exam.aspx.designer.cs">
+      <DependentUpon>exam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\examdetails.aspx.cs">
+      <DependentUpon>examdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\examdetails.aspx.designer.cs">
+      <DependentUpon>examdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\examquestion.aspx.cs">
+      <DependentUpon>examquestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\examquestion.aspx.designer.cs">
+      <DependentUpon>examquestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\question.aspx.cs">
+      <DependentUpon>question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\question.aspx.designer.cs">
+      <DependentUpon>question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\resetpass.aspx.cs">
+      <DependentUpon>resetpass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\resetpass.aspx.designer.cs">
+      <DependentUpon>resetpass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ScheduleEvent.aspx.cs">
+      <DependentUpon>ScheduleEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\ScheduleEvent.aspx.designer.cs">
+      <DependentUpon>ScheduleEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\studentList.aspx.cs">
+      <DependentUpon>studentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\studentList.aspx.designer.cs">
+      <DependentUpon>studentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\subject.aspx.cs">
+      <DependentUpon>subject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\subject.aspx.designer.cs">
+      <DependentUpon>subject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="categoryitem.aspx.cs">
+      <DependentUpon>categoryitem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="categoryitem.aspx.designer.cs">
+      <DependentUpon>categoryitem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coursecontent.aspx.cs">
+      <DependentUpon>coursecontent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coursecontent.aspx.designer.cs">
+      <DependentUpon>coursecontent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainDashboard.aspx.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainDashboard.aspx.designer.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.cs">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mainmenu.aspx.cs">
+      <DependentUpon>mainmenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mainmenu.aspx.designer.cs">
+      <DependentUpon>mainmenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.aspx.cs">
+      <DependentUpon>MainWindow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainWindow.aspx.designer.cs">
+      <DependentUpon>MainWindow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyLearningCalendar.aspx.cs">
+      <DependentUpon>MyLearningCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyLearningCalendar.aspx.designer.cs">
+      <DependentUpon>MyLearningCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProfile.aspx.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProfile.aspx.designer.cs">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myresult.aspx.cs">
+      <DependentUpon>myresult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myresult.aspx.designer.cs">
+      <DependentUpon>myresult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="question.aspx.cs">
+      <DependentUpon>question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="question.aspx.designer.cs">
+      <DependentUpon>question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterUser.aspx.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="RegisterUser.aspx.designer.cs">
+      <DependentUpon>RegisterUser.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="StudentMaster.master.designer.cs">
+      <DependentUpon>StudentMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMenu.aspx.cs">
+      <DependentUpon>StudentMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentMenu.aspx.designer.cs">
+      <DependentUpon>StudentMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="subjectexam.aspx.cs">
+      <DependentUpon>subjectexam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentMaster.master.cs">
+      <DependentUpon>StudentMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="subjectexam.aspx.designer.cs">
+      <DependentUpon>subjectexam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="courseitem.aspx.cs">
+      <DependentUpon>courseitem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="courseitem.aspx.designer.cs">
+      <DependentUpon>courseitem.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.master" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\css\bootstrap.min.css.map" />
+    <Content Include="assets\font-awesome\css\font-awesome.css.map" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\font-awesome\less\animated.less" />
+    <Content Include="assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="assets\font-awesome\less\core.less" />
+    <Content Include="assets\font-awesome\less\fixed-width.less" />
+    <Content Include="assets\font-awesome\less\font-awesome.less" />
+    <Content Include="assets\font-awesome\less\icons.less" />
+    <Content Include="assets\font-awesome\less\larger.less" />
+    <Content Include="assets\font-awesome\less\list.less" />
+    <Content Include="assets\font-awesome\less\mixins.less" />
+    <Content Include="assets\font-awesome\less\path.less" />
+    <Content Include="assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="assets\font-awesome\less\screen-reader.less" />
+    <Content Include="assets\font-awesome\less\stacked.less" />
+    <Content Include="assets\font-awesome\less\variables.less" />
+    <Content Include="assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="assets\font-awesome\scss\_animated.scss" />
+    <Content Include="assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="assets\font-awesome\scss\_core.scss" />
+    <Content Include="assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="assets\font-awesome\scss\_icons.scss" />
+    <Content Include="assets\font-awesome\scss\_larger.scss" />
+    <Content Include="assets\font-awesome\scss\_list.scss" />
+    <Content Include="assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="assets\font-awesome\scss\_path.scss" />
+    <Content Include="assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="assets\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="assets\font-awesome\scss\_variables.scss" />
+    <Content Include="assets\js\bootstrap.bundle.js.map" />
+    <Content Include="assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="assets\js\bootstrap.js.map" />
+    <Content Include="assets\js\bootstrap.min.js.map" />
+    <Content Include="admin\assets\css\bootstrap.css.map" />
+    <Content Include="admin\assets\css\bootstrap.min.css.map" />
+    <Content Include="admin\assets\font-awesome\css\font-awesome.css.map" />
+    <Content Include="admin\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin\assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="admin\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="admin\assets\font-awesome\less\animated.less" />
+    <Content Include="admin\assets\font-awesome\less\bordered-pulled.less" />
+    <Content Include="admin\assets\font-awesome\less\core.less" />
+    <Content Include="admin\assets\font-awesome\less\fixed-width.less" />
+    <Content Include="admin\assets\font-awesome\less\font-awesome.less" />
+    <Content Include="admin\assets\font-awesome\less\icons.less" />
+    <Content Include="admin\assets\font-awesome\less\larger.less" />
+    <Content Include="admin\assets\font-awesome\less\list.less" />
+    <Content Include="admin\assets\font-awesome\less\mixins.less" />
+    <Content Include="admin\assets\font-awesome\less\path.less" />
+    <Content Include="admin\assets\font-awesome\less\rotated-flipped.less" />
+    <Content Include="admin\assets\font-awesome\less\screen-reader.less" />
+    <Content Include="admin\assets\font-awesome\less\stacked.less" />
+    <Content Include="admin\assets\font-awesome\less\variables.less" />
+    <Content Include="admin\assets\font-awesome\scss\_animated.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_core.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_icons.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_larger.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_list.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_mixins.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_path.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_stacked.scss" />
+    <Content Include="admin\assets\font-awesome\scss\_variables.scss" />
+    <Content Include="admin\assets\font-awesome\scss\font-awesome.scss" />
+    <Content Include="admin\assets\js\bootstrap.bundle.js.map" />
+    <Content Include="admin\assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="admin\assets\js\bootstrap.js.map" />
+    <Content Include="admin\assets\js\bootstrap.min.js.map" />
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="StudentMaster.master" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pdf_files\" />
+    <Folder Include="ppt_files\" />
+    <Folder Include="Video_Lectures\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55084</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44339/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

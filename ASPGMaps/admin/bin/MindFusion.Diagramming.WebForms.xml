@@ -1,0 +1,3194 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Diagramming.WebForms</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Diagramming.WebForms.ShapeListConverter">
+            <summary>
+            Provides a type converter to convert ShapeList objects to and from other representations.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            TypeConverter.CanConvertTo override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            TypeConverter.ConvertFrom override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            TypeConverter.ConvertTo override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.NullItemConverter">
+            <summary>
+            Serializes DiagramItem instances in Canvas modes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NullItemConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NullItemConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NullItemConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramViewConverter">
+            <summary>
+            Serializes DiagramView instances in Canvas and ImageMap mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramViewConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramViewConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramViewConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.LaneGridConverter">
+            <summary>
+            Serializes LaneGrid instances in Canvas and ImageMap mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneGridConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the LaneGridConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneGridConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneGridConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.LaneGridConverter.view">
+            <summary>
+            A reference to the current DiagramView control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.LaneGridConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.LaneHeaderCollectionConverter">
+            <summary>
+            Serializes HeaderCollection instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneHeaderCollectionConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneHeaderCollectionConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.LaneHeaderCollectionConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.LaneHeaderConverter">
+            <summary>
+            Serializes Header instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneHeaderConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneHeaderConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.LaneHeaderConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.LaneStyleConverter">
+            <summary>
+            Serializes Lanes.Style instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneStyleConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LaneStyleConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.LaneStyleConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramItemConverter">
+            <summary>
+            Serializes DiagramItem instances in Canvas and ImageMap modes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the DiagramItemConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the DiagramItemConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.DiagramItemConverter.view">
+            <summary>
+            A reference to the current DiagramView control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramItemConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramLinkConverter">
+            <summary>
+            Serializes DiagramLink instances in Canvas and ImageMap mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramLinkConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the DiagramLinkConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramLinkConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the DiagramLinkConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramLinkConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramLinkConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramLinkConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.LinkLabelConverter">
+            <summary>
+            Serializes LinkLabel instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LinkLabelConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.LinkLabelConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.LinkLabelConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramNodeConverter">
+            <summary>
+            Serializes DiagramNode instances in Canvas and ImageMap mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the DiagramNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the DiagramNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ShapeNodeConverter">
+            <summary>
+            Serializes ShapeNode instances in Canvas and ImageMap mode when items DOM is enabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the ShapeNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the ShapeNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.TableNodeConverter">
+            <summary>
+            Serializes TableNode instances in Canvas and ImageMap mode when items DOM is enabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the TableNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the TableNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.TableRowConverter">
+            <summary>
+            Serializes TableRow instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableRowConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableRowConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableRowConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.TableColumnConverter">
+            <summary>
+            Serializes TableColumn instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableColumnConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableColumnConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableColumnConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.TableCellConverter">
+            <summary>
+            Serializes TableCell instances in Canvas and ImageMap mode when items DOM is enabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableCellConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the TableCellConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableCellConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,MindFusion.Diagramming.TableNode)">
+            <summary>
+            Creates a new instance of the TableCellConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableCellConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableCellConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableCellConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ContainerNodeConverter">
+            <summary>
+            Serializes ContainerNode instances in Canvas and ImageMap mode when items DOM is enabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ContainerNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the ContainerNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ContainerNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the ContainerNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ContainerNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ContainerNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ContainerNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.TreeViewNodeConverter">
+            <summary>
+            Serializes TreeViewNode instances in ImageMap mode when items DOM is enabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the TreeViewNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the TreeViewNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TreeViewNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.TreeViewItemConverter">
+            <summary>
+            Serializes TreeViewItem instances in ImageMap mode when items DOM is enabled.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewItemConverter.#ctor(MindFusion.Diagramming.TreeViewNode)">
+            <summary>
+            Creates a new instance of the TreeViewItemConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewItemConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TreeViewItemConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TreeViewItemConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.SvgNodeConverter">
+            <summary>
+            Serializes SvgNode instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.SvgNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the SvgNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.SvgNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the SvgNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.SvgNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.SvgNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.SvgNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.FreeFormNodeConverter">
+            <summary>
+            Serializes FreeFormNode instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.FreeFormNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the FreeFormNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.FreeFormNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the FreeFormNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.FreeFormNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.FreeFormNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.FreeFormNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.CompositeNodeConverter">
+            <summary>
+            Serializes CompositeNode instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.CompositeNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView)">
+            <summary>
+            Creates a new instance of the CompositeNode class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.CompositeNodeConverter.#ctor(MindFusion.Diagramming.WebForms.DiagramView,System.Boolean)">
+            <summary>
+            Creates a new instance of the CompositeNodeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.CompositeNodeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.CompositeNodeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.CompositeNodeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.BoundsConverter">
+            <summary>
+            Serializes RectangleF instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.BoundsConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.BoundsConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.BoundsConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.SizeConverter">
+            <summary>
+            Serializes SizeF instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.SizeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.SizeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.SizeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ThicknessConverter">
+            <summary>
+            Serializes Thickness instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ThicknessConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ThicknessConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ThicknessConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.PointConverter">
+            <summary>
+            Serializes PointF instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.PointConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.PointConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.PointConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.FontConverter">
+            <summary>
+            Serializes Font instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.FontConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.FontConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.FontConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.BrushConverter">
+            <summary>
+            Serializes MindFusion.Drawing.Brush instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.BrushConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.BrushConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.BrushConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ColorStopConverter">
+            <summary>
+            Serializes ColorStop instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ColorStopConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ColorStopConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ColorStopConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ImageConverter">
+            <summary>
+            Serializes Image instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ImageConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.BrushColorConverter">
+            <summary>
+            Represents a Brush to Color string JavaScriptConverter
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.BrushColorConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.BrushColorConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.BrushColorConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.AnchorPointConverter">
+            <summary>
+            Serializes AnchorPoint instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.AnchorPointConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.AnchorPointConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.AnchorPointConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.AnchorPatternConverter">
+            <summary>
+            Serializes AnchorPattern instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.AnchorPatternConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.AnchorPatternConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.AnchorPatternConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramStyleConverter">
+            <summary>
+            Serializes DiagramStyle instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramStyleConverter.#ctor(MindFusion.Diagramming.MeasureUnit)">
+            <summary>
+            Creates a new instance of the DiagramStyleConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramStyleConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramStyleConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramStyleConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramItemStyleConverter">
+            <summary>
+            Serializes DiagramItemStyle instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemStyleConverter.#ctor(MindFusion.Diagramming.MeasureUnit)">
+            <summary>
+            Creates a new instance of the DiagramItemStyleConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemStyleConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramItemStyleConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramItemStyleConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ThemeConverter">
+            <summary>
+            Serializes Theme instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ThemeConverter.#ctor(MindFusion.Diagramming.MeasureUnit)">
+            <summary>
+            Creates a new instance of the ThemeConverter class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ThemeConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ThemeConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ThemeConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.NodeEffectConverter">
+            <summary>
+            Serializes NodeEffect instances.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeEffectConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeEffectConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeEffectConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.PenConverter">
+            <summary>
+            Represents a Pen to Color JavaScriptConverter.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.PenConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.PenConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.PenConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ShapeListBoxConverter">
+            <summary>
+            Serializes ShapeListBox instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBoxConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBoxConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBoxConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.OverviewConverter">
+            <summary>
+            Serializes Overview instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.OverviewConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.OverviewConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.OverviewConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.NodeListViewConverter">
+            <summary>
+            Serializes NodeListView instances in Canvas and ImageMap mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListViewConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListViewConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListViewConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.RulerConverter">
+            <summary>
+            Serializes Ruler instances in Canvas mode.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.RulerConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Deserialize override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.RulerConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+            <summary>
+            Serialize override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.RulerConverter.SupportedTypes">
+            <summary>
+            SupportedTypes override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.SerializationUtils">
+            <summary>
+            Contains helper methods for Diagram serialization.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ConverterUtils">
+            <summary>
+            Contains helper convert methods.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ItemTypeResolver">
+            <summary>
+            Provides a type resolver for DiagramItem classes.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.#ctor(System.Web.UI.Page)">
+            <summary>
+            Creates a new instance of the ItemTypeResolver class.
+            </summary>
+            <param name="page">
+            A reference to the System.Web.UI.Page instance containing the DiagramView control.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.RegisterItemType(System.Type,System.String)">
+            <summary>
+            Registers a custom item class for serialization support.
+            </summary>
+            <param name="itemClass">
+            A Type instance identifying the item class.
+            </param>
+            <param name="clientClassId">
+            A class identifier to use when serializing items
+            of the specified type on the client side.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.RegisterItemType(System.Type,System.String,System.String)">
+            <summary>
+            Registers a custom item class for serialization support.
+            </summary>
+            <param name="itemClass">
+            A Type instance identifying the item class.
+            </param>
+            <param name="clientClassId">
+            A class identifier to use when serializing items
+            of the specified type on the client side.
+            </param>
+            <param name="jsonTemplate">
+            A JSON string representation of the node contents.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.RegisterConverters(System.Web.Script.Serialization.JavaScriptConverter[])">
+            <summary>
+            Registers converters used for JSON serialization of custom item types.
+            </summary>
+            <param name="converters">
+            The converters to register.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.ResolveType(System.String)">
+            <summary>
+            Returns the Type of the specified id.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.ResolveTypeId(System.Type)">
+            <summary>
+            Returns the id of the specified Type.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ItemTypeResolver.GetResolver(System.Web.UI.Page)">
+            <summary>
+            Returns the ItemTypeResolver instance registered for the specified page.
+            </summary>
+            <param name="page">
+            A reference to the System.Web.UI.Page instance.
+            </param>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ItemTypeResolver.ItemTypes">
+            <summary>
+            Gets the registered item types.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ItemTypeResolver.AutoClasses">
+            <summary>
+            Gets the registered client types with JSON templates.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ItemTypeResolver.Converters">
+            <summary>
+            Gets the registered custom converters.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ControlHelper">
+            <summary>
+            Provides helper methods for working with the ASP.NET page controls hierarchy.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ControlHelper.FindControlRecursive(System.Web.UI.Control,System.String)">
+            <summary>
+            Recursilvely looks for a child control with the specified ID.
+            </summary>
+            <param name="root">The parent control from which to start the search.</param>
+            <param name="id">Specifies the ID of the child control to find.</param>
+            <returns>A reference to the control, or null if no control with teh specified ID has been found.</returns>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DiagramView">
+            <summary>
+            Renders the contents of a Diagram on a web page.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.#ctor">
+            <summary>
+            Initializes a new instance of the DiagramView class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.Dispose">
+            <summary>
+            WebControl.Dispose override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnInit(System.EventArgs)">
+            <summary>
+            WebControl.OnInit override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveControlState">
+            <summary>
+            WebControl.SaveControlState override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadControlState(System.Object)">
+            <summary>
+            WebControl.LoadControlState override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnPreRender(System.EventArgs)">
+            <summary>
+            Control.OnPreRender override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderBeginTag override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnCreatingArea(System.Object,MindFusion.Diagramming.AreaEventArgs)">
+            <summary>
+            Handles the HtmlBuilder.CreatingArea event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            IPostBackDataHandler.LoadPostData implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RaisePostDataChangedEvent">
+            <summary>
+            IPostBackDataHandler.RaisePostDataChangedEvent implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.DocToClient(System.Drawing.PointF)">
+            <summary>
+            Converts the specified point from document to client coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.DocToClientUnscaled(System.Drawing.PointF)">
+            <summary>
+            Converts the specified point from document to client
+            coordinates ignoring the current scale transformation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.DocToClient(System.Drawing.RectangleF)">
+            <summary>
+            Converts the specified rectangle from document to client coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.DocToClient(System.Single)">
+            <summary>
+            Converts the specified value from document to client coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.ClientToDoc(System.Int32)">
+            <summary>
+            Converts the specified value from client to document coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.ClientToDoc(System.Drawing.Point)">
+            <summary>
+            Converts the specified point from client to document coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.ClientToDoc(System.Drawing.PointF)">
+            <summary>
+            Converts the specified point from client to document coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.ClientToDocUnscaled(System.Drawing.Point)">
+            <summary>
+            Converts the specified point from client to document
+            coordinates ignoring the current scale transformation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.ClientToDoc(System.Drawing.Rectangle)">
+            <summary>
+            Converts the specified rectangle from client to document coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.ClientToDoc(System.Drawing.RectangleF)">
+            <summary>
+            Converts the specified rectangle from client to document coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SetTransforms(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Sets the current transformation to the specified graphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SetTransformsNoScale(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Sets the current transformation (without scaling) to the
+            specified graphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.UnsetTransforms(MindFusion.Drawing.IGraphics)">
+            <summary>
+            Unsets the transformation from the specified graphics.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SetZoomLevel(System.Double)">
+            <summary>
+            Implements IZoomTarget.SetZoomLevel.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.GetZoomLevel">
+            <summary>
+            Implements IZoomTarget.GetZoomLevel.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SetZoomStep(System.Double)">
+            <summary>
+            Implements IZoomTarget.SetZoomStep.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.GetZoomStep">
+            <summary>
+            Implements IZoomTarget.GetZoomStep.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SetScrollX(System.Single)">
+            <summary>
+            Implements IZoomTarget.SetScrollX.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.GetScrollX">
+            <summary>
+            Implements IZoomTarget.GetScrollX.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SetScrollY(System.Single)">
+            <summary>
+            Implements IZoomTarget.SetScrollY.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.GetScrollY">
+            <summary>
+            Implements IZoomTarget.GetScrollY.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToFile(System.String,System.Boolean)">
+            <summary>
+            Saves the diagram into a file.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadFromFile(System.String)">
+            <summary>
+            Loads a diagram from a file.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToString(MindFusion.Diagramming.SaveToStringFormat,System.Boolean)">
+            <summary>
+            Saves the diagram as an ASCII string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToString(MindFusion.Diagramming.SaveToStringFormat,System.Boolean,System.Boolean)">
+            <summary>
+            Saves the diagram as an ASCII string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadFromString(System.String)">
+            <summary>
+            Loads the diagram data from a string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToStream(System.IO.Stream,System.Boolean)">
+            <summary>
+            Saves the diagram data into a stream.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadFromStream(System.IO.Stream)">
+            <summary>
+            Loads the Diagram document from a stream.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToXml(System.String)">
+            <summary>
+            Saves the diagram into an XML file.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToXml(System.Xml.XmlDocument)">
+            <summary>
+            Saves the diagram into an XML document.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.SaveToXml(System.Xml.XmlDocument,System.Boolean)">
+            <summary>
+            Saves the diagram into an XML document.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadFromXml(System.String)">
+            <summary>
+            Loads the diagram from an XML file.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadFromXml(System.Xml.XmlDocument)">
+            <summary>
+            Loads the diagram from an XML document.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.LoadFromJson(System.String)">
+            <summary>
+            Loads the diagram from JSON string.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.JavascriptEscape(System.String)">
+            <summary>
+            Escapes special javascript characters with backslashes to
+            generate javascript string constant whose value is equal to the argument.
+            </summary>
+            <param name="js">The string that will be escaped</param>
+            <returns>The escaped string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.HtmlEscape(System.String)">
+            <summary>
+            Escapes special html attribute characters with html references to
+            generate a string that can be safely inserted in an html attribute.
+            </summary>
+            <param name="attributeContents">The string that will be escaped</param>
+            <returns>The escaped string</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterCreatedItemEvent(MindFusion.Diagramming.DiagramItem)">
+            <summary>
+            Adds the created items to the underlying list to raise the 
+            appropriate event in the RaisePostDataChanged override later.
+            </summary>
+            <param name="item">the created DiagramItem</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterModifiedItemEvent(System.Web.UI.Triplet)">
+            <summary>
+            Adds the modified items to the underlying list to raise the 
+            appropriate event in the RaisePostDataChanged override later.
+            </summary>
+            <param name="item">a Triplet object containing information about the modified item.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterInplaceEditedItemEvent(System.Web.UI.Triplet)">
+            <summary>
+            Adds the inplace edited items to the underlying list to raise the 
+            appropriate event in the RaisePostDataChanged override later.
+            </summary>
+            <param name="item">a Triplet object containing information about the inplace edited item.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterInplaceEditedCellEvent(System.Web.UI.Triplet)">
+            <summary>
+            Adds the inplace edited cells to the underlying list to raise the 
+            appropriate event in the RaisePostDataChanged override later.
+            </summary>
+            <param name="item">a Triplet object containing information about the inplace edited cell.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterItemType(System.Type,System.String,System.String,System.Int32)">
+            <summary>
+            Registers a custom item class for serialization support.
+            </summary>
+            <param name="itemClass">
+            A Type instance identifying the item class.
+            </param>
+            <param name="classId">
+            A class identifier to use when serializing, saving and loading items
+            of the specified type.
+            </param>
+            <param name="clientClassId">
+            A class identifier to use when serializing items
+            of the specified type on the client side.
+            </param>
+            <param name="classVersion">
+            A revision number of the item's class serialization format.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterItemType(System.Type,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Registers a custom item class for serialization support.
+            </summary>
+            <param name="itemClass">
+            A Type instance identifying the item class.
+            </param>
+            <param name="classId">
+            A class identifier to use when serializing, saving and loading items
+            of the specified type.
+            </param>
+            <param name="clientClassId">
+            A class identifier to use when serializing items
+            of the specified type on the client side.
+            </param>
+            <param name="classVersion">
+            A revision number of the item's class serialization format.
+            </param>
+            <param name="jsonTemplate">
+            A JSON string representation of the node contents.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RegisterConverters(System.Web.Script.Serialization.JavaScriptConverter[])">
+            <summary>
+            Registers converters used for JSON serialization of custom item types.
+            </summary>
+            <param name="converters">
+            The converters to register.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnNodeCreated(MindFusion.Diagramming.NodeEventArgs)">
+            <summary>
+            Raises the NodeCreated event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnLinkCreated(MindFusion.Diagramming.LinkEventArgs)">
+            <summary>
+            Raises the LinkCreated event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnNodeModified(MindFusion.Diagramming.NodeEventArgs)">
+            <summary>
+            Raises the NodeModified event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnLinkModified(MindFusion.Diagramming.LinkEventArgs)">
+            <summary>
+            Raises the LinkModified event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnNodeTextEdited(MindFusion.Diagramming.EditNodeTextEventArgs)">
+            <summary>
+            Raises the NodeTextEdited event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnLinkTextEdited(MindFusion.Diagramming.EditLinkTextEventArgs)">
+            <summary>
+            Raises the LinkTextEdited event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnCellTextEdited(MindFusion.Diagramming.EditCellTextEventArgs)">
+            <summary>
+            Raises the CellTextEdited event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RaiseDeleting(MindFusion.Diagramming.DiagramItem)">
+            <summary>
+            Raises the appropriate Deleting event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnNodeDeleting(MindFusion.Diagramming.NodeValidationEventArgs)">
+            <summary>
+            Raises the NodeDeleting event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnNodeDeleted(MindFusion.Diagramming.NodeEventArgs)">
+            <summary>
+            Raises the NodeDeleted event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnLinkDeleting(MindFusion.Diagramming.LinkValidationEventArgs)">
+            <summary>
+            Raises the LinkDeleting event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnLinkDeleted(MindFusion.Diagramming.LinkEventArgs)">
+            <summary>
+            Raises the LinkDeleted event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnNodeClicked(MindFusion.Diagramming.NodeEventArgs)">
+            <summary>
+            Raises the NodeClicked event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnLinkClicked(MindFusion.Diagramming.LinkEventArgs)">
+            <summary>
+            Raises the LinkClicked event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnCellClicked(MindFusion.Diagramming.CellEventArgs)">
+            <summary>
+            Raises the CellClicked event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RaiseClicked(MindFusion.Diagramming.DiagramItem,System.Drawing.PointF,MindFusion.Diagramming.MouseButton)">
+            <summary>
+            Raises the appropriate Clicked event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnTreeExpanded(MindFusion.Diagramming.NodeEventArgs)">
+            <summary>
+            Raises the TreeExpanded event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RaiseTreeExpanded(MindFusion.Diagramming.DiagramNode)">
+            <summary>
+            Raises the TreeExpanded event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.OnTreeCollapsed(MindFusion.Diagramming.NodeEventArgs)">
+            <summary>
+            Raises the TreeCollapsed event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.DiagramView.RaiseTreeCollapsed(MindFusion.Diagramming.DiagramNode)">
+            <summary>
+            Raises the TreeCollapsed event.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LicenseKey">
+            <summary>
+            Gets or sets the license key of the control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ItemTypes">
+            <summary>
+            Gets the registered item types.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.AutoClasses">
+            <summary>
+            Gets the registered client types with JSON templates.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.Converters">
+            <summary>
+            Gets the registered custom converters.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.NodeCreated">
+            <summary>
+            Raised when the user creates a node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.LinkCreated">
+            <summary>
+            Raised when the user creates a node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.NodeModified">
+            <summary>
+            Raised when the user modifies a node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.LinkModified">
+            <summary>
+            Raised when the user modifies a link.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.NodeTextEdited">
+            <summary>
+            Raised when the user edits the text of a node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.LinkTextEdited">
+            <summary>
+            Raised when the user edits the text of a link.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.CellTextEdited">
+            <summary>
+            Raised when the user edits the text of a table’s cell.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.NodeDeleting">
+            <summary>
+            Raised when the user tries to delete a node, this event lets you cancel the operation.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.NodeDeleted">
+            <summary>
+            Raised when the user deletes a node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.LinkDeleting">
+            <summary>
+            Raised when the user tries to delete a link, this event lets you cancel the operation.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.LinkDeleted">
+            <summary>
+            Raised when the user deletes a link.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.NodeClicked">
+            <summary>
+            Raised when the user clicks a node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.LinkClicked">
+            <summary>
+            Raised when the user clicks a link.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.CellClicked">
+            <summary>
+            Raised when the user clicks a table’s cell.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.TreeExpanded">
+            <summary>
+            Raised when a user expands a tree branch by clicking the [+]
+            button of an Expandable node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.TreeCollapsed">
+            <summary>
+            Raised when a user collapses a tree branch by clicking the [-]
+            button of an Expandable node.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Diagramming.WebForms.DiagramView.CreatingAreaElement">
+            <summary>
+            Allow adding custom attributes to the AREA elements generated in ImageMap mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ControlLoadedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the control is loaded on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkCreatedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user draws a new link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeCreatedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user draws a new node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkCreatingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            as a validation event while users draw new links.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeCreatingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            as a validation event while users draw new nodes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkModifiedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user moves a link's control point.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeModifiedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user moves or resizes a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkModifyingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            as a validation event while a link is being modified.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeModifyingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            as a validation event while a node is being modified.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkSelectedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user selects a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeSelectedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user selects a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkDeselectedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user deselects a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeDeselectedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user deselects a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkClickedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the users clicks a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeClickedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the users clicks a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkDoubleClickedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the users double-clicks a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeDoubleClickedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the users double-clicks a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkDeletedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when a link is deleted, either programmatically or by the user.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeDeletedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when a node is deleted, either programmatically or by the user.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkDeletingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            as a validation event when the user tries to delete a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeDeletingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            as a validation event when the user tries to delete a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkMouseEnterScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the mouse pointer enters a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeMouseEnterScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the mouse pointer enters a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkMouseLeaveScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the mouse pointer leaves a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeMouseLeaveScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the mouse pointer leaves a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TreeExpandedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user expands a tree branch by clicking the [+] button of an Expandable node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TreeCollapsedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user collapses a tree branch by clicking the [-] button of an Expandable node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ClickedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user clicks on a location unoccupied by diagram elements.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.SerializeTagScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when custom data associated with a diagram item must be transferred from the browser to the server.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.DeserializeTagScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when custom data associated with a diagram item comes from the server to the browser and must be decoded from its string representation.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.EnterInplaceEditScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when when entering inplace-edit mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LeaveInplaceEditScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when when leaving inplace-edit mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.CellTextEditedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user edits the text of a table's cell.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ContainerChildAddedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when a node is added to a ContainerNode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ContainerChildRemovedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when a node is removed from a ContainerNode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ContainerFoldedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user folds a container by clicking the arrow-up button 
+            in the container's caption area.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ContainerUnfoldedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user unfolds a container by clicking the arrow-down button 
+            in the container's caption area.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.InitializeLinkScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user starts drawing a new link, just after the DiagramLink 
+            instance is created.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.InitializeNodeScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user starts drawing a new node, just after the 
+            DiagramNode instance is created.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ItemAddedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when an item is added to the diagram.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ItemRemovedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when an item is removed from the diagram.
+            
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkTextEditedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user edits the text of a link.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodeTextEditedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user edits the text of a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.SelectionMovingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            while the user is moving multiple selected items, this event lets you 
+            cancel the modification.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.HeaderStartResizingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user starts resizing a header interactively.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.HeaderResizedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user resizes a header.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.HitTestAdjustmentHandlesScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when custom hit testing of item’s adjustment handles must be performed.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.DrawAdjustmentHandlesScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when item’s adjustment handles must be custom drawn.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ContainerChildAddingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            before a child node is added to a container.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ContainerChildRemovingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            before a child node is removed from a container.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.SelectionModifyingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            while the user is moving or resizing multiple items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.CreateEditControlScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when in-place edit operation starts, letting you create a custom
+            editor control instead of TEXTAREA.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TableColumnResizingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user resizes a column in a table interactively.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TableRowResizingScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user resizes a row in a table interactively.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TableColumnResizedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user finishes resizing a column in a table interactively.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TableRowResizedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user finishes resizing a row in a table interactively.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.NodePastedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when a diagram node is pasted from clipboard.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkPastedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when a diagram link is pasted from clipboard.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LaneGridCellTextEditedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the used edits the text of a grid cell.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.AnimatedLayoutCompletedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when an animated layout completes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.HyperlinkClickedScript">
+            <summary>
+            Contains the name of a JavaScript function that should be invoked
+            when the user clicks a hyperlink inside a node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.Diagram">
+            <summary>
+            Gets the diagram displayed by this view.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ClientSideMode">
+            <summary>
+            Specifies the method used for handling user interaction and drawing on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ClientFocus">
+            <summary>
+            Gets or sets if the DiagramView has the keyboard focus in ImageMap mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.Focusable">
+            <summary>
+            Gets or sets whether the control should request the keyboard focus when clicked.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.AutoPostBack">
+            <summary>
+            Gets or sets a value indicating whether the control automatically 
+            posts back to the server when the user interacts with it.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ImageGenLocation">
+            <summary>
+            URL to the ImageGen.aspx file, used to generate the flowchart images.
+            This property is rendered as a SRC attribute for the flowchart's IMG element.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.JsLibraryLocation">
+            <summary>
+            Gets or sets the URL to the MindFusion.Diagramming.js file, used in Canvas ClientSideMode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ClientScriptMode">
+            <summary>
+            Gets or sets a value indicating which library will be used in the control's client-side scripts in Canvas ClientSideMode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.JQueryLocation">
+            <summary>
+            Gets or sets the URL to the JQuery script file.
+            </summary>
+            <remarks>
+            This property is used only if ClientScriptMode is set to ClientScriptMode.JQuery.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MsAjaxLocation">
+            <summary>
+            Gets or sets the URL to the Microsoft Ajax script file.
+            </summary>
+            <remarks>
+            This property is used only if ClientScriptMode is set to ClientScriptMode.MsAjax.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ImageGenArguments">
+            <summary>
+            Custom query string that should be added to the ImageGen's url
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ShapeLibraryLocation">
+            <summary>
+            The location of a shape library file containing custom shape definitions.
+            It can be set to a full URL of the file, or a relative file path.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TooltipDelay">
+            <summary>
+            Gets or sets the delay before a tooltip is shown.
+            </summary>
+            This property is used only if ClientSideMode is set to ClientSideMode.Canvas.
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.AppletElement">
+            <summary>
+            Returns a JavaScript statement that returns a reference to the NetDiagram applet.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MaxImageSize">
+            <summary>
+            Specifies the size of the image tiles when ClientSideMode is ImageMap.
+            Image maps can be split into multuple images to avoid problems with large images.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ImageFormat">
+            <summary>
+            Gets or sets the format of the generated images.
+            It must be specified as a MIME type string.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ImageQuality">
+            <summary>
+            Gets or sets the quality of compressed images. Accepted values are between 1 and 100.
+            A greater value yields an image of higher quality, but with lower compression.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.TimeStampImage">
+            <summary>
+            Gets or sets a value indicating whether a timestamp should be added to the
+            generated image URL. Use this to prevent browsers from caching the diagram image.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.LinkTarget">
+            <summary>
+            Gets or sets the value of the TARGET attribute of AREA tags generated in ImageMap mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.AutoScroll">
+            <summary>
+            Gets or sets a value indicating whether auto scrolling of
+            the document area is enabled.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.EnableClipboard">
+            <summary>
+            Enables copy, paste and cut operations in ImageMap client mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.EnableItemsDOM">
+            <summary>
+            Enables items DOM in ImageMap client mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.CustomNodeType">
+            <summary>
+            Gets or sets the type of a MindFusion.Diagramming.DiagramNode derived class
+            whose instance should be created when a user starts drawing.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.CustomLinkType">
+            <summary>
+            Gets or sets the type of a MindFusion.Diagramming.DiagramLink derived class
+            whose instance should be created when a user starts drawing.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.DelKeyAction">
+            <summary>
+            Gets or sets a value that specifies what action should be performed
+            when the user hits the Del key.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ScrollX">
+            <summary>
+            Gets or sets the document's X scroll position.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ScrollY">
+            <summary>
+            Gets or sets the document's Y scroll position.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ZoomFactor">
+            <summary>
+            Gets or sets the zoom factor used to scale up or down the diagram.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MinVisibleFontSize">
+            <summary>
+            Gets or sets a threshold value that hides text if scaled font sizes become smaller.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.Behavior">
+            <summary>
+            Gets or sets a value indicating how the control responds to user actions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ShowScrollbars">
+            <summary>
+            Specifies whether scrollbars should be displayed.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierFactor">
+            <summary>
+            Gets or sets the zoom factor of the magnifier tool.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierWidth">
+            <summary>
+            Gets or sets the width of the magnifier tool, expressed in pixels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierHeight">
+            <summary>
+            Gets or sets the height of the magnifier tool, expressed in pixels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierShape">
+            <summary>
+            Gets or sets the shape of the magnifier tool.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierFrameThickness">
+            <summary>
+            Gets or sets the thickness of the magnifier frame, expressed in pixels.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierFrameColor">
+            <summary>
+            Gets or sets the color of the magnifier frame.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierSecondaryFrameColor">
+            <summary>
+            Gets or sets the secondary color of the magnifier frame.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierShading">
+            <summary>
+            Gets or sets a value indicating whether to enhance the effect of
+            a magnifier lense by using a gradient shading.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MagnifierEnabled">
+            <summary>
+            Gets or sets a value indicating whether the magnifier tool is currently enabled.
+            </summary>
+            <remarks>
+            The magnifier tool can be alternatively enabled on-demand through a modifier key
+            or a mouse button.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.CanvasVirtualScroll">
+            <summary>
+            Gets or sets a value indicating whether Canvas virtual scroll mode is enabled.
+            </summary>
+            <remarks>
+            If this property is disabled, scrolling is implemented using an overflow Div
+            element hosting a Canvas element as large as the diagram. If enabled,
+            the Canvas is as large as the view and implements scrolling internally,
+            which helps using the control in browsers with smaller Canvas size limits,
+            such as ones running on mobile devices.
+            </remarks>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.AllowInplaceEdit">
+            <summary>
+            Gets or sets a value indicating whether in-place editing
+            of the text of objects is enabled.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.ModificationStart">
+            <summary>
+            Gets or sets how users can start modifying diagram items.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.MaxJsonLength">
+            <summary>
+            Gets or sets the maximum length of JSON strings that are accepted by internal JavaScriptSerializer instances.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.RecursionLimit">
+            <summary>
+            Gets or sets the limit for constraining the number of object levels to process by internal JavaScriptSerializer instances.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.Images">
+            <summary>
+            A map of all diagram images.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.DiagramView.Svgs">
+            <summary>
+            A map of all SVGs.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.Overview">
+            <summary>
+            Provides a scaled-down view of a DiagramView contents
+            and lets the user scroll the bound view.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Overview.#ctor">
+            <summary>
+            Initializes a new instance of the Overview class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Overview.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.Render override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Overview.OnInit(System.EventArgs)">
+            <summary>
+            WebControl.OnInit override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Overview.OnPreRender(System.EventArgs)">
+            <summary>
+            WebControl.OnPreRender override.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Overview.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderBeginTag override.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Overview.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.DiagramView">
+            <summary>
+            Gets or sets the DiagramView instance whose contents
+            to display in the overview control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.DiagramViewID">
+            <summary>
+            Specifies the ID of the DiagramView whose content should be displayed in this control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.ControlLoadedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the control is loaded on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.ScaleFactor">
+            <summary>
+            Gets or sets a fixed scale factor to be used when FitAll is disabled.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.ScaleMode">
+            <summary>
+            Gets or sets a value indicating whether to fit the whole
+            diagram inside the overview window control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.AllowZoom">
+            <summary>
+            Gets or sets a value indicating whether users are allowed to zoom the diagram by resizing the overview's viewport tracker rectangle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.AutoScrollAmount">
+            <summary>
+             Gets or sets the amount by which to auto-scroll the view when the mouse leaves the view boundaries while drawing.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.MinVisibleFontSize">
+            <summary>
+            Gets or sets a threshold value that hides text if scaled font sizes become smaller.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.ShowScrollbars">
+            <summary>
+            Shows or hides the scrollbars of the overview control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.BackColor">
+            <summary>
+            Gets or sets the background color of the overview control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.DimColor">
+            <summary>
+            Gets or sets a color used to blend with the part of the diagram
+            that is not visible in the DiagramView‘s client rectangle.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Overview.DivSize">
+            <summary>
+            Gets the size of the div element rendered for this control.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.CreatingAreaElementEventArgs">
+            <summary>
+            Contains the arguments passed to handlers of the CreatingAreaElement event.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.CreatingAreaElementEventArgs.Attributes">
+            <summary>
+            The custom attributes added for the  specified Item.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.CreatingAreaElementEventArgs.Item">
+            <summary>
+            The diagram item whose AREA element is currently being created.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.CreatingAreaElementEventHandler">
+            <summary>
+            Represents methods that handle the CreatingAreaElement event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.TableCellData.#ctor(MindFusion.Diagramming.TableNode.Cell,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the TableCellData class.
+            </summary>
+            <param name="cell">
+            The TableNode.Cell related to the event.
+            </param>
+            <param name="column">
+            The zero-based index of the table column related to the event.
+            </param>
+            <param name="row">
+            The zero-based index of the table row related to the event.
+            </param>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableCellData.Cell">
+            <summary>
+            Get the cell whose text has been edited.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableCellData.Column">
+            <summary>
+            Gets the index of the table's column that contains Cell.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.TableCellData.Row">
+            <summary>
+            Gets the index of the table's row that contains Cell.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.Ruler">
+            <summary>
+            Provides horizontal and vertical scales that helps users measure diagram items.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.#ctor">
+            <summary>
+            Initializes a new instance of the Ruler class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            IPostBackDataHandler.LoadPostData implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.RaisePostDataChangedEvent">
+            <summary>
+            IPostBackDataHandler.RaisePostDataChangedEvent implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.OnPreRender(System.EventArgs)">
+            <summary>
+            Control.OnPreRender override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderBeginTag override.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.Render override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.OnInit(System.EventArgs)">
+            <summary>
+            WebControl.OnInit override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.DiagramView">
+            <summary>
+            Gets or sets the DiagramView instance attached to this Ruler.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.ControlLoadedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the control is loaded on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Unit">
+            <summary>
+            Gets or sets the measure unit used by the ruler.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.BackColor">
+            <summary>
+            Gets or sets the background color of the ruler control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.ForeColor">
+            <summary>
+            Gets or sets the foreground color of the control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.ProjectionColor">
+            <summary>
+            Gets or sets the color used to paint the projection of the active node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.GuideColor">
+            <summary>
+            Gets or sets the color used to paint guides.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.TextColor">
+            <summary>
+            Gets or sets the color used to paint texts in the ruler.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.PointerColor">
+            <summary>
+            Gets or sets the color used to paint cursor projections.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.EnableGuides">
+            <summary>
+            Gets or sets a value indicating whether alignment guides are active.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.HorizontalScaleVisible">
+            <summary>
+            Gets or sets a value indicating whether the horizontal ruler scale is visible.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.VerticalScaleVisible">
+            <summary>
+            Gets or sets a value indicating whether the vertical ruler scale is visible.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.NegatedX">
+            <summary>
+            Gets or sets whether the horizontal scale should show negated values, simulating that the coordinate system's X axis grows to the left.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.NegatedY">
+            <summary>
+            Gets or sets whether the vertical scale should show negated values, simulating that the coordinate system's Y axis grows to the top.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.ProjectRotatedBounds">
+            <summary>
+            Gets or sets whether the projection of nodes on ruler's scales rotates with them.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.Ruler.Scale">
+            <summary>
+            Represents either horizontal or vertical scale in a ruler control.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.Ruler.Scale.#ctor(MindFusion.Diagramming.WebForms.Ruler,MindFusion.Diagramming.Orientation)">
+            <summary>
+            Scales are instantiated only by the ruler.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Scale.Unit">
+            <summary>
+            Gets or sets the measure unit used by the scale.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Scale.EnableGuides">
+            <summary>
+            Gets or sets a value indicating whether
+            alignment guides are active.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Scale.ProjectionColor">
+            <summary>
+            Gets or sets the color used to paint
+            the projection of the active node.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Scale.GuideColor">
+            <summary>
+            Gets or sets the color used to paint guides.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Scale.TextColor">
+            <summary>
+            Gets or sets the color used to paint texts.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.Ruler.Scale.CursorColor">
+            <summary>
+            Gets or sets the color used to paint cursor projections.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ShapeListBox">
+            <summary>
+            Displays a set of shapes defined via the Shape class,
+            and allows creating ShapeNode objects via drag-and-drop.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.#ctor">
+            <summary>
+            Initializes a new instance of the ShapeListBox class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.SaveViewState">
+            <summary>
+            WebControl.SaveViewState override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.LoadViewState(System.Object)">
+            <summary>
+            WebControl.LoadViewState override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.TrackViewState">
+            <summary>
+            WebControl.TrackViewState override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.OnPreRender(System.EventArgs)">
+            <summary>
+            WebControl.OnPreRender override.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderBeginTag override.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.Render override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeListBox.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShapeFilter">
+            <summary>
+            Gets a list containing the identifiers of shapes that should be displayed in the list box.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ControlLoadedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the control is loaded on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ImageLocation">
+            <summary>
+            Gets/sets the name of the cached images folder in ImageMap mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.JsLibraryLocation">
+            <summary>
+            Gets or sets the URL to the MindFusion.Diagramming.js file, used in Canvas ClientSideMode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShapeLibraryLocation">
+            <summary>
+            Gets or sets the location of a shape library file containing custom shape definitions.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ClientSideMode">
+            <summary>
+            Specifies the method used for handling user interaction and drawing on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ImageFormat">
+            <summary>
+            Gets or sets the format of the generated images.
+            It must be specified as a MIME type string.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ImageQuality">
+            <summary>
+            Gets or sets the quality of compressed images. Accepted values are between 1 and 100.
+            A greater value yields an image of higher quality, but with lower compression.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.AllowRename">
+            <summary>
+            Allow inline renaming of listbox items by pressing F2.
+            Currently the listbox displays the shape identifiers as names.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.AllowRemove">
+            <summary>
+            Allow deletion of listbox items by pressing Del.
+            Only listbox items are deleted, while the shape definitions remain intact.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShowLabels">
+            <summary>
+            Show text labels along with icons in list items
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.DefaultShapeSize">
+            <summary>
+            Gets or sets the size of the shapes that are created
+            by dragging list box items to the diagram.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.IconMargin">
+            <summary>
+            Gets or sets the horizontal and vertical margins left around the shape icons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.IconSize">
+            <summary>
+            Gets or sets the size of the shape icons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShapeFillColor">
+            <summary>
+            Gets or sets the fill color of the shapes icons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShapeSelectedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the user selects a Shape in the ShapeListBox.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShapeRenamedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the user renames a Shape in the ShapeListBox.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.ShapeListBox.ShapeRemovedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the user removes a Shape from the ShapeListBox.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ShapeList">
+            <summary>
+            Represents a list of Shape objects.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeList.FromString(System.String)">
+            <summary>
+            Creates a ShapeList from a string containing shape identifiers.
+            </summary>
+            <param name="value">A string containing comma-delimited list of shape identifiers.</param>
+            <returns>A ShapeList containing the specified shapes.</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ShapeList.ToString(MindFusion.Diagramming.WebForms.ShapeList)">
+            <summary>
+            Creates a string representation of the specified ShapeList.
+            </summary>
+            <param name="shapes">A list of Shape objects.</param>
+            <returns>A string containing comma-delimited list of shape identifiers.</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageMapMode.GenerateImage(MindFusion.Diagramming.WebForms.DiagramView,System.Drawing.RectangleF,System.Drawing.Rectangle,System.Int32,System.Int32)">
+            <summary>
+            Exports the diagram to an image of the type set in ImageMapSettngs with the specified height and width.
+            </summary   >
+            <returns>A byte array containing the image data.</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageMapMode.GenerateImage(MindFusion.Diagramming.WebForms.DiagramView,System.Drawing.RectangleF,System.Drawing.Rectangle)">
+            <summary>
+            Exports the diagram to an image of the type set in ImageMapSettngs.
+            </summary>
+            <returns>A byte array containing the image data.</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageMapMode.GetEncoderInfo(System.String)">
+            <summary>
+            Gets the .NET encoder for the specified MIME image type.
+            </summary>
+            <param name="mimeType">A MIME type.</param>
+            <returns>An object that can encode images into the specified format.</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageMapMode.GetOverviewImage(MindFusion.Diagramming.WebForms.DiagramView,System.Int32,System.Int32)">
+            <summary>
+            Returns URL to the overview image.
+            </summary>
+            <param name="view">The DiagramView associated with the overview</param>
+            <param name="width">Width in pixels of the overview image.</param>
+            <param name="height">Height in pixels of the overview image.</param>
+            <returns>A string containing the overview image URL.</returns>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.ImageMapMode.LoadPostData(MindFusion.Diagramming.WebForms.NodeListView,System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            IPostBackDataHandler.LoadPostData implementation.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ClientSideMode">
+            <summary>
+            Specifies the method used for handling user interaction and drawing on the client side.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.ClientSideMode.ImageMap">
+            <summary>
+            The diagram is rendered on the client side using an image and an
+            HTML image map. Each area of the image map corresponds to a diagram item.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.ClientSideMode.Canvas">
+            <summary>
+            The diagram is rendered on the client side using an HTML5 Canvas.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.ClientSideMode.SvgImage">
+            <summary>
+            The diagram is rendered on the client side as an SVG drawing.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.DelKeyAction">
+            <summary>
+            Specifies the type of action performed when the user presses the DEL key.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.DelKeyAction.None">
+            <summary>
+            Indicates that nothing happens.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.DelKeyAction.DeleteActiveItem">
+            <summary>
+            Indicates that only the ActiveItem is deleted.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.DelKeyAction.DeleteSelectedItems">
+            <summary>
+            Indicates that all selected items are deleted.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ScaleMode">
+            <summary>
+            Defines Overview scaling modes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.ScaleMode.FitAll">
+            <summary>
+            Scale the Overview dynamically to fit the entire diagram.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.ScaleMode.CombinedScales">
+            <summary>
+            Combine diagram's ZoomFactor with overview's ScaleFactor.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Diagramming.WebForms.ScaleMode.FixedScale">
+            <summary>
+            Use fixed scale specified via ScaleFactor, ignoring diagram's zoom level.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.NodeListView">
+            <summary>
+            ListBox control with support for hosting DiagramNodes and dragging them to
+            the Diagram control.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.#ctor">
+            <summary>
+            Initializes a new instance of the NodeListView class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            IPostBackDataHandler.LoadPostData implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RaisePostDataChangedEvent">
+            <summary>
+            IPostBackDataHandler.RaisePostDataChangedEvent implementation.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.OnPreRender(System.EventArgs)">
+            <summary>
+            WebControl.OnPreRender override.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderBeginTag override.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.Render override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            WebControl.RenderContents override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.AddNode(MindFusion.Diagramming.DiagramNode)">
+            <summary>
+            Adds a DiagramNode to the displayed nodes collection.
+            </summary>
+            <param name="node">The DiagramNode instance to add.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.AddNode(MindFusion.Diagramming.DiagramNode,System.String)">
+            <summary>
+            Adds a new DiagramNode to the node collection.
+            </summary>
+            <param name="node">The DiagramNode instance to add.</param>
+            <param name="caption">The caption to display for the node.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RemoveNode(MindFusion.Diagramming.DiagramNode)">
+            <summary>
+            Removes a DiagramNode from the node collection.
+            </summary>
+            <param name="node">The DiagramNode instance to remove.</param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RegisterItemType(System.Type,System.String,System.String,System.Int32)">
+            <summary>
+            Registers a custom item class for serialization support.
+            </summary>
+            <param name="itemClass">
+            A Type instance identifying the item class.
+            </param>
+            <param name="classId">
+            A class identifier to use when serializing, saving and loading items
+            of the specified type.
+            </param>
+            <param name="clientClassId">
+            A class identifier to use when serializing items
+            of the specified type on the client side.
+            </param>
+            <param name="classVersion">
+            A revision number of the item's class serialization format.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RegisterItemType(System.Type,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Registers a custom item class for serialization support.
+            </summary>
+            <param name="itemClass">
+            A Type instance identifying the item class.
+            </param>
+            <param name="classId">
+            A class identifier to use when serializing, saving and loading items
+            of the specified type.
+            </param>
+            <param name="clientClassId">
+            A class identifier to use when serializing items
+            of the specified type on the client side.
+            </param>
+            <param name="classVersion">
+            A revision number of the item's class serialization format.
+            </param>
+            <param name="jsonTemplate">
+            A JSON string representation of the node contents.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.NodeListView.RegisterConverters(System.Web.Script.Serialization.JavaScriptConverter[])">
+            <summary>
+            Registers converters used for JSON serialization of custom item types.
+            </summary>
+            <param name="converters">
+            The converters to register.
+            </param>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.Items">
+            <summary>
+            Gets the collection of nodes displayed in the view.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.Captions">
+            <summary>
+            Gets the collection of captions displayed in the view.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.ClientSideMode">
+            <summary>
+            Specifies the method used for handling user interaction and drawing on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.NodeSize">
+            <summary>
+            Gets or sets the size of the nodes displayed in the view.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.DefaultNodeSize">
+            <summary>
+            Gets or sets the size of the nodes that are created
+            by dragging list box items to the diagram.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.Padding">
+            <summary>
+            Gets or sets the horizontal and vertical margins left around the shape icons.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.Orientation">
+            <summary>
+            Gets or sets the layout orientation of the control.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.ControlLoadedScript">
+            <summary>
+            Specifies the name of a JavaScript function that should be invoked
+            when the control is loaded on the client side.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.JsLibraryLocation">
+            <summary>
+            Gets or sets the URL to the MindFusion.Diagramming.js file, used in Canvas ClientSideMode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.ImageLocation">
+            <summary>
+            Gets/sets the name of the cached images folder in ImageMap mode.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.ImageFormat">
+            <summary>
+            Gets or sets the format of the generated images.
+            It must be specified as a MIME type string.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.ImageQuality">
+            <summary>
+            Gets or sets the quality of compressed images. Accepted values are between 1 and 100.
+            A greater value yields an image of higher quality, but with lower compression.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.MinVisibleFontSize">
+            <summary>
+            Gets or sets a threshold value that hides text if scaled font sizes become smaller.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.ItemTypes">
+            <summary>
+            Gets the registered item types.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.AutoClasses">
+            <summary>
+            Gets the registered client types with JSON templates.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.NodeListView.Converters">
+            <summary>
+            Gets the registered custom converters.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.ScriptManagerHelper">
+            <summary>
+            Provide methods for registering client scripts that work also for AJAX apps, without link dependencies
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.HtmlMarkup">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.HtmlMarkup.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.HtmlMarkup.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.HtmlMarkup.AssignPropertyScript">
+            <summary>
+              Looks up a localized string similar to document.getElementById(&apos;{0}&apos;).{1} = {2};.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.HtmlMarkup.AssignValueScript">
+            <summary>
+              Looks up a localized string similar to document.getElementById(&apos;{0}&apos;).value = {1};.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.HtmlMarkup.ParamTag">
+            <summary>
+              Looks up a localized string similar to &lt;param name=&quot;{0}&quot; value=&quot;{1}&quot;&gt;.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.StringCollection">
+            <summary>
+            Represents a collection of StringItems.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.#ctor">
+            <summary>
+            Initializes a new instance of the StringCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.AddRange(System.String[])">
+            <summary>
+            Adds the specified values to the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Add(System.String)">
+            <summary>
+            Adds the specified string to the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Add(MindFusion.Diagramming.WebForms.StringItem)">
+            <summary>
+            Adds the specified stringItem to the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Contains(System.String)">
+            <summary>
+            Checks whether the specified string is contained in the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Insert(System.Int32,MindFusion.Diagramming.WebForms.StringItem)">
+            <summary>
+            Inserts the specified stringItem in the collection
+            at the specified position.
+            </summary>
+            <param name="index">
+            The zero-based index at which to insert the stringItem.
+            </param>
+            <param name="stringItem">
+            The stringItem object to add to the collection.
+            </param>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Remove(MindFusion.Diagramming.WebForms.StringItem)">
+            <summary>
+            Removes the specified stringItem from the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Remove(System.String)">
+            <summary>
+            Removes the specified string from the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the stringItem of the specified index from the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.Clear">
+            <summary>
+            Removes all stringItems from the collection.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringCollection.GetConcatenatedString(System.String)">
+            <summary>
+            Concatenates the string items into a string using the specified delimiter.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.StringCollection.Item(System.Int32)">
+            <summary>
+            Gets or sets the stringItem at the specified index.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.StringCollection.ViewState">
+            <summary>
+            Returns the view state for this collection.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Diagramming.WebForms.StringItem">
+            <summary>
+            Implements view state aware items for the StringCollection class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringItem.#ctor">
+            <summary>
+            Initializes a new instance of the StringItem class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringItem.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the StringItem class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Diagramming.WebForms.StringItem.ToString">
+            <summary>
+            Object.ToString() override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.StringItem.Text">
+            <summary>
+            Gets or sets the string associated with this item.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Diagramming.WebForms.StringItem.ViewState">
+            <summary>
+            Returns the view state for this item.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="erd1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="admin_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="admin_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="admin_password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="exam">
+          <Key>
+            <PropertyRef Name="exam_id" />
+          </Key>
+          <Property Name="exam_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="exam_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="exam_description" Type="nvarchar" MaxLength="500" />
+          <Property Name="exam_date" Type="date" />
+          <Property Name="exam_duration" Type="int" />
+          <Property Name="exam_marks" Type="int" />
+          <Property Name="exam_negativemarks" Type="int" />
+          <Property Name="exam_totalquestion" Type="int" />
+          <Property Name="category_fid" Type="int" />
+          <Property Name="subject_fid" Type="int" />
+          <Property Name="exampass_marks" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\MUNASHE NYAZENGA\VIDEOS\ITSEDITED\ASPGMAPS\ASPGMAPS\ASPGMAPS\ASPGMAPS\APP_DATA\ONLINEEXAM.MDF.dbo.mp4_files' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="mp4_files">
+          <Key>
+            <PropertyRef Name="vid_Id" />
+          </Key>
+          <Property Name="vid_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="course_fid" Type="varchar" MaxLength="300" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="description" Type="varchar" MaxLength="300" />
+          <Property Name="upload_date" Type="date" />
+          <Property Name="path" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\MUNASHE NYAZENGA\VIDEOS\ITSEDITED\ASPGMAPS\ASPGMAPS\ASPGMAPS\ASPGMAPS\APP_DATA\ONLINEEXAM.MDF.dbo.pdf_files' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="pdf_files">
+          <Key>
+            <PropertyRef Name="pdf_Id" />
+          </Key>
+          <Property Name="pdf_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="course_fid" Type="varchar" MaxLength="300" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="description" Type="varchar" MaxLength="300" />
+          <Property Name="upload_date" Type="date" />
+          <Property Name="path" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\MUNASHE NYAZENGA\VIDEOS\ITSEDITED\ASPGMAPS\ASPGMAPS\ASPGMAPS\ASPGMAPS\APP_DATA\ONLINEEXAM.MDF.dbo.ppt_files' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ppt_files">
+          <Key>
+            <PropertyRef Name="ppt_Id" />
+          </Key>
+          <Property Name="ppt_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="course_fid" Type="varchar" MaxLength="300" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="description" Type="varchar" MaxLength="300" />
+          <Property Name="upload_date" Type="date" />
+          <Property Name="path" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="question_name" Type="nvarchar" MaxLength="4000" />
+          <Property Name="option_one" Type="nvarchar" MaxLength="4000" />
+          <Property Name="option_two" Type="nvarchar" MaxLength="4000" />
+          <Property Name="option_three" Type="nvarchar" MaxLength="4000" />
+          <Property Name="option_four" Type="nvarchar" MaxLength="4000" />
+          <Property Name="question_answer" Type="int" />
+          <Property Name="exam_fid" Type="int" />
+        </EntityType>
+        <EntityType Name="result">
+          <Key>
+            <PropertyRef Name="result_id" />
+          </Key>
+          <Property Name="result_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="result_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="result_score" Type="int" />
+          <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="totalquestion" Type="int" />
+          <Property Name="exam_fid" Type="int" />
+          <Property Name="exam_date" Type="date" />
+        </EntityType>
+        <EntityType Name="subject">
+          <Key>
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="subject_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subject_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="category_fid" Type="int" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\MUNASHE NYAZENGA\VIDEOS\ITSEDITED\ASPGMAPS\ASPGMAPS\ASPGMAPS\ASPGMAPS\APP_DATA\ONLINEEXAM.MDF.dbo.TempHeart' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TempHeart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Student_Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Temp" Type="nvarchar" MaxLength="500" />
+          <Property Name="Bmp" Type="nvarchar" MaxLength="500" />
+          <Property Name="DateTime" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="userCategory">
+          <Key>
+            <PropertyRef Name="user_category_id" />
+          </Key>
+          <Property Name="user_category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_category_name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_password" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="usrdata">
+          <Key>
+            <PropertyRef Name="usrID" />
+          </Key>
+          <Property Name="usrID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_rank" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_department" Type="nvarchar" MaxLength="50" />
+          <Property Name="usercategory" Type="nvarchar" MaxLength="15" />
+          <Property Name="user_fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_username" Type="nchar" MaxLength="50" />
+          <Property Name="user_password" Type="nchar" MaxLength="50" />
+          <Property Name="user_gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="user_dob" Type="nchar" MaxLength="50" />
+          <Property Name="user_force_number" Type="nchar" MaxLength="50" />
+          <Property Name="user_mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_picture" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="vents">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="event_description" Type="nvarchar" MaxLength="300" />
+          <Property Name="start_date" Type="date" Nullable="false" />
+        </EntityType>
+        <Function Name="getExamDuration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="exam_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAddEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="subject" Type="nvarchar" Mode="In" />
+          <Parameter Name="event_description" Type="nvarchar" Mode="In" />
+          <Parameter Name="start_date" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spaddexam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="examname" Type="nvarchar" Mode="In" />
+          <Parameter Name="examdis" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="examdate" Type="date" Mode="In" />
+          <Parameter Name="examduration" Type="int" Mode="In" />
+          <Parameter Name="exampassmarks" Type="int" Mode="In" />
+          <Parameter Name="exammarks" Type="int" Mode="In" />
+          <Parameter Name="examsubjectfid" Type="int" Mode="In" />
+          <Parameter Name="examcategoryfid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spaddmp4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="course_fid" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="upload_date" Type="date" Mode="In" />
+          <Parameter Name="path" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spaddpdf" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="course_fid" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="upload_date" Type="date" Mode="In" />
+          <Parameter Name="path" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spaddppt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="course_fid" Type="varchar" Mode="In" />
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="description" Type="varchar" Mode="In" />
+          <Parameter Name="upload_date" Type="date" Mode="In" />
+          <Parameter Name="path" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spAddquestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="questionname" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optionone" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optiontwo" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optionthree" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optionfour" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="questionanswer" Type="int" Mode="In" />
+          <Parameter Name="examfid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spAdminlogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="admin_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spAdminRegisterinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="admin_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="admin_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spEditexam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="examid" Type="int" Mode="In" />
+          <Parameter Name="examname" Type="nvarchar" Mode="In" />
+          <Parameter Name="examdiscription" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="examdate" Type="date" Mode="In" />
+          <Parameter Name="examduration" Type="int" Mode="In" />
+          <Parameter Name="exampassmarks" Type="int" Mode="In" />
+          <Parameter Name="examnmarks" Type="int" Mode="In" />
+          <Parameter Name="categoryfid" Type="int" Mode="In" />
+          <Parameter Name="subjectfid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEditexamfill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="examid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEditquestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="questionid" Type="int" Mode="In" />
+          <Parameter Name="questionname" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optionone" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optiontwo" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optionthree" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="optionfour" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="questionanswer" Type="int" Mode="In" />
+          <Parameter Name="examfid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEditquestionfill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="questionid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEditUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id_number" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_department" Type="nvarchar" Mode="In" />
+          <Parameter Name="usercategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_username" Type="nchar" Mode="In" />
+          <Parameter Name="user_password" Type="nchar" Mode="In" />
+          <Parameter Name="user_gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_dob" Type="nchar" Mode="In" />
+          <Parameter Name="user_force_number" Type="nchar" Mode="In" />
+          <Parameter Name="user_mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_address" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_picture" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="spEditUser2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id_number" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_department" Type="nvarchar" Mode="In" />
+          <Parameter Name="usercategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_username" Type="nchar" Mode="In" />
+          <Parameter Name="user_password" Type="nchar" Mode="In" />
+          <Parameter Name="user_gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_dob" Type="nchar" Mode="In" />
+          <Parameter Name="user_force_number" Type="nchar" Mode="In" />
+          <Parameter Name="user_mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_address" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_picture" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="spExamList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spExamListDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="exam_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spExamquestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="examfid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spExamserachcategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="subjectid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spgetallquestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetEvent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetStudentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usercategory" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spGetUserInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_username" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertNewUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_id_number" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_rank" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_department" Type="nvarchar" Mode="In" />
+          <Parameter Name="usercategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_username" Type="nchar" Mode="In" />
+          <Parameter Name="user_password" Type="nchar" Mode="In" />
+          <Parameter Name="user_gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_dob" Type="nchar" Mode="In" />
+          <Parameter Name="user_force_number" Type="nchar" Mode="In" />
+          <Parameter Name="user_mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_address" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_picture" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="spLoadMp4Files" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spLoadpdffiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spLoadpptfiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spQuestionserachexam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="examid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spResultinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="examfid" Type="nvarchar" Mode="In" />
+          <Parameter Name="resultstatus" Type="nvarchar" Mode="In" />
+          <Parameter Name="resultscore" Type="int" Mode="In" />
+          <Parameter Name="totalquestion" Type="int" Mode="In" />
+          <Parameter Name="username" Type="nvarchar" Mode="In" />
+          <Parameter Name="examdate" Type="date" Mode="In" />
+        </Function>
+        <Function Name="spSubjectedit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="subject_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="category_id" Type="int" Mode="In" />
+          <Parameter Name="subject_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spSubjecteditfill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spSubjectList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spUserresult" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUserslogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUsersRegisterinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="user_fname" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_lname" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUsrLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usercategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="user_username" Type="nchar" Mode="In" />
+          <Parameter Name="user_password" Type="nchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="erd1StoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="exam" EntityType="Self.exam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="question" EntityType="Self.question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="result" EntityType="Self.result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subject" EntityType="Self.subject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userCategory" EntityType="Self.userCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usrdata" EntityType="Self.usrdata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vents" EntityType="Self.vents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mp4_files" EntityType="Self.mp4_files" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[mp4_files].[vid_Id] AS [vid_Id], 
+[mp4_files].[course_fid] AS [course_fid], 
+[mp4_files].[name] AS [name], 
+[mp4_files].[description] AS [description], 
+[mp4_files].[upload_date] AS [upload_date], 
+[mp4_files].[path] AS [path]
+FROM [dbo].[mp4_files] AS [mp4_files]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="pdf_files" EntityType="Self.pdf_files" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[pdf_files].[pdf_Id] AS [pdf_Id], 
+[pdf_files].[course_fid] AS [course_fid], 
+[pdf_files].[name] AS [name], 
+[pdf_files].[description] AS [description], 
+[pdf_files].[upload_date] AS [upload_date], 
+[pdf_files].[path] AS [path]
+FROM [dbo].[pdf_files] AS [pdf_files]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ppt_files" EntityType="Self.ppt_files" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ppt_files].[ppt_Id] AS [ppt_Id], 
+[ppt_files].[course_fid] AS [course_fid], 
+[ppt_files].[name] AS [name], 
+[ppt_files].[description] AS [description], 
+[ppt_files].[upload_date] AS [upload_date], 
+[ppt_files].[path] AS [path]
+FROM [dbo].[ppt_files] AS [ppt_files]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TempHeart" EntityType="Self.TempHeart" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[TempHeart].[Id] AS [Id], 
+[TempHeart].[Student_Name] AS [Student_Name], 
+[TempHeart].[Temp] AS [Temp], 
+[TempHeart].[Bmp] AS [Bmp], 
+[TempHeart].[DateTime] AS [DateTime]
+FROM [dbo].[TempHeart] AS [TempHeart]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="erd1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="admin_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="admin_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="admin_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="exam">
+          <Key>
+            <PropertyRef Name="exam_id" />
+          </Key>
+          <Property Name="exam_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="exam_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="exam_description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="exam_date" Type="DateTime" Precision="0" />
+          <Property Name="exam_duration" Type="Int32" />
+          <Property Name="exam_marks" Type="Int32" />
+          <Property Name="exam_negativemarks" Type="Int32" />
+          <Property Name="exam_totalquestion" Type="Int32" />
+          <Property Name="category_fid" Type="Int32" />
+          <Property Name="subject_fid" Type="Int32" />
+          <Property Name="exampass_marks" Type="Int32" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="question_name" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="option_one" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="option_two" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="option_three" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="option_four" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="question_answer" Type="Int32" />
+          <Property Name="exam_fid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="result">
+          <Key>
+            <PropertyRef Name="result_id" />
+          </Key>
+          <Property Name="result_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="result_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="result_score" Type="Int32" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="totalquestion" Type="Int32" />
+          <Property Name="exam_fid" Type="Int32" />
+          <Property Name="exam_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="subject">
+          <Key>
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="subject_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subject_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_fid" Type="Int32" />
+          <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="userCategory">
+          <Key>
+            <PropertyRef Name="user_category_id" />
+          </Key>
+          <Property Name="user_category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="usrdata">
+          <Key>
+            <PropertyRef Name="usrID" />
+          </Key>
+          <Property Name="usrID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usercategory" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="user_fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_username" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="user_password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="user_gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="user_dob" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="user_force_number" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="user_mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vent">
+          <Key>
+            <PropertyRef Name="EventID" />
+          </Key>
+          <Property Name="EventID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="event_description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="start_date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="mp4_files">
+          <Key>
+            <PropertyRef Name="vid_Id" />
+          </Key>
+          <Property Name="vid_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="course_fid" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="upload_date" Type="DateTime" Precision="0" />
+          <Property Name="path" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pdf_files">
+          <Key>
+            <PropertyRef Name="pdf_Id" />
+          </Key>
+          <Property Name="pdf_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="course_fid" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="upload_date" Type="DateTime" Precision="0" />
+          <Property Name="path" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ppt_files">
+          <Key>
+            <PropertyRef Name="ppt_Id" />
+          </Key>
+          <Property Name="ppt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="course_fid" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="upload_date" Type="DateTime" Precision="0" />
+          <Property Name="path" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TempHeart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Student_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Temp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Bmp" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DateTime" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="erd" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="exams" EntityType="Self.exam" />
+          <EntitySet Name="questions" EntityType="Self.question" />
+          <EntitySet Name="results" EntityType="Self.result" />
+          <EntitySet Name="subjects" EntityType="Self.subject" />
+          <EntitySet Name="userCategories" EntityType="Self.userCategory" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="usrdatas" EntityType="Self.usrdata" />
+          <EntitySet Name="vents" EntityType="Self.vent" />
+          <EntitySet Name="mp4_files" EntityType="Self.mp4_files" />
+          <EntitySet Name="pdf_files" EntityType="Self.pdf_files" />
+          <EntitySet Name="ppt_files" EntityType="Self.ppt_files" />
+          <EntitySet Name="TempHearts" EntityType="Self.TempHeart" />
+          <FunctionImport Name="getExamDuration" ReturnType="Collection(Int32)">
+            <Parameter Name="exam_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAddEvent">
+            <Parameter Name="subject" Mode="In" Type="String" />
+            <Parameter Name="event_description" Mode="In" Type="String" />
+            <Parameter Name="start_date" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spaddexam">
+            <Parameter Name="examname" Mode="In" Type="String" />
+            <Parameter Name="examdis" Mode="In" Type="String" />
+            <Parameter Name="examdate" Mode="In" Type="DateTime" />
+            <Parameter Name="examduration" Mode="In" Type="Int32" />
+            <Parameter Name="exampassmarks" Mode="In" Type="Int32" />
+            <Parameter Name="exammarks" Mode="In" Type="Int32" />
+            <Parameter Name="examsubjectfid" Mode="In" Type="Int32" />
+            <Parameter Name="examcategoryfid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spaddmp4">
+            <Parameter Name="course_fid" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="upload_date" Mode="In" Type="DateTime" />
+            <Parameter Name="path" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spaddpdf">
+            <Parameter Name="course_fid" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="upload_date" Mode="In" Type="DateTime" />
+            <Parameter Name="path" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spaddppt">
+            <Parameter Name="course_fid" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="description" Mode="In" Type="String" />
+            <Parameter Name="upload_date" Mode="In" Type="DateTime" />
+            <Parameter Name="path" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAddquestion">
+            <Parameter Name="questionname" Mode="In" Type="String" />
+            <Parameter Name="optionone" Mode="In" Type="String" />
+            <Parameter Name="optiontwo" Mode="In" Type="String" />
+            <Parameter Name="optionthree" Mode="In" Type="String" />
+            <Parameter Name="optionfour" Mode="In" Type="String" />
+            <Parameter Name="questionanswer" Mode="In" Type="Int32" />
+            <Parameter Name="examfid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spAdminlogin" ReturnType="Collection(Int32)">
+            <Parameter Name="admin_email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spAdminRegisterinsert" ReturnType="Collection(Int32)">
+            <Parameter Name="admin_name" Mode="In" Type="String" />
+            <Parameter Name="admin_email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEditexam">
+            <Parameter Name="examid" Mode="In" Type="Int32" />
+            <Parameter Name="examname" Mode="In" Type="String" />
+            <Parameter Name="examdiscription" Mode="In" Type="String" />
+            <Parameter Name="examdate" Mode="In" Type="DateTime" />
+            <Parameter Name="examduration" Mode="In" Type="Int32" />
+            <Parameter Name="exampassmarks" Mode="In" Type="Int32" />
+            <Parameter Name="examnmarks" Mode="In" Type="Int32" />
+            <Parameter Name="categoryfid" Mode="In" Type="Int32" />
+            <Parameter Name="subjectfid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEditexamfill" ReturnType="Collection(erd1.spEditexamfill_Result)">
+            <Parameter Name="examid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEditquestion">
+            <Parameter Name="questionid" Mode="In" Type="Int32" />
+            <Parameter Name="questionname" Mode="In" Type="String" />
+            <Parameter Name="optionone" Mode="In" Type="String" />
+            <Parameter Name="optiontwo" Mode="In" Type="String" />
+            <Parameter Name="optionthree" Mode="In" Type="String" />
+            <Parameter Name="optionfour" Mode="In" Type="String" />
+            <Parameter Name="questionanswer" Mode="In" Type="Int32" />
+            <Parameter Name="examfid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEditquestionfill" ReturnType="Collection(erd1.spEditquestionfill_Result)">
+            <Parameter Name="questionid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEditUser">
+            <Parameter Name="user_id_number" Mode="In" Type="String" />
+            <Parameter Name="user_rank" Mode="In" Type="String" />
+            <Parameter Name="user_department" Mode="In" Type="String" />
+            <Parameter Name="usercategory" Mode="In" Type="String" />
+            <Parameter Name="user_fname" Mode="In" Type="String" />
+            <Parameter Name="user_lname" Mode="In" Type="String" />
+            <Parameter Name="user_username" Mode="In" Type="String" />
+            <Parameter Name="user_password" Mode="In" Type="String" />
+            <Parameter Name="user_gender" Mode="In" Type="String" />
+            <Parameter Name="user_dob" Mode="In" Type="String" />
+            <Parameter Name="user_force_number" Mode="In" Type="String" />
+            <Parameter Name="user_mobile" Mode="In" Type="String" />
+            <Parameter Name="user_email" Mode="In" Type="String" />
+            <Parameter Name="user_address" Mode="In" Type="String" />
+            <Parameter Name="user_picture" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="spEditUser2">
+            <Parameter Name="user_id_number" Mode="In" Type="String" />
+            <Parameter Name="user_rank" Mode="In" Type="String" />
+            <Parameter Name="user_department" Mode="In" Type="String" />
+            <Parameter Name="usercategory" Mode="In" Type="String" />
+            <Parameter Name="user_fname" Mode="In" Type="String" />
+            <Parameter Name="user_lname" Mode="In" Type="String" />
+            <Parameter Name="user_username" Mode="In" Type="String" />
+            <Parameter Name="user_password" Mode="In" Type="String" />
+            <Parameter Name="user_gender" Mode="In" Type="String" />
+            <Parameter Name="user_dob" Mode="In" Type="String" />
+            <Parameter Name="user_force_number" Mode="In" Type="String" />
+            <Parameter Name="user_mobile" Mode="In" Type="String" />
+            <Parameter Name="user_email" Mode="In" Type="String" />
+            <Parameter Name="user_address" Mode="In" Type="String" />
+            <Parameter Name="user_picture" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="spExamList" ReturnType="Collection(erd1.spExamList_Result)" />
+          <FunctionImport Name="spExamListDetails" ReturnType="Collection(erd1.spExamListDetails_Result)">
+            <Parameter Name="exam_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spExamquestion" ReturnType="Collection(erd1.spExamquestion_Result)">
+            <Parameter Name="examfid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spExamserachcategory" ReturnType="Collection(erd1.spExamserachcategory_Result)">
+            <Parameter Name="subjectid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spgetallquestion" ReturnType="Collection(erd1.spgetallquestion_Result)" />
+          <FunctionImport Name="spGetEvent" ReturnType="Collection(erd1.spGetEvent_Result)" />
+          <FunctionImport Name="spGetStudentList" ReturnType="Collection(erd1.spGetStudentList_Result)">
+            <Parameter Name="usercategory" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spGetUserInfo" ReturnType="Collection(erd1.spGetUserInfo_Result)">
+            <Parameter Name="user_username" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertNewUser" ReturnType="Collection(Int32)">
+            <Parameter Name="user_id_number" Mode="In" Type="String" />
+            <Parameter Name="user_rank" Mode="In" Type="String" />
+            <Parameter Name="user_department" Mode="In" Type="String" />
+            <Parameter Name="usercategory" Mode="In" Type="String" />
+            <Parameter Name="user_fname" Mode="In" Type="String" />
+            <Parameter Name="user_lname" Mode="In" Type="String" />
+            <Parameter Name="user_username" Mode="In" Type="String" />
+            <Parameter Name="user_password" Mode="In" Type="String" />
+            <Parameter Name="user_gender" Mode="In" Type="String" />
+            <Parameter Name="user_dob" Mode="In" Type="String" />
+            <Parameter Name="user_force_number" Mode="In" Type="String" />
+            <Parameter Name="user_mobile" Mode="In" Type="String" />
+            <Parameter Name="user_email" Mode="In" Type="String" />
+            <Parameter Name="user_address" Mode="In" Type="String" />
+            <Parameter Name="user_picture" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="spLoadMp4Files" ReturnType="Collection(erd1.spLoadMp4Files_Result)" />
+          <FunctionImport Name="spLoadpdffiles" ReturnType="Collection(erd1.spLoadpdffiles_Result)" />
+          <FunctionImport Name="spLoadpptfiles" ReturnType="Collection(erd1.spLoadpptfiles_Result)" />
+          <FunctionImport Name="spQuestionserachexam" ReturnType="Collection(erd1.spQuestionserachexam_Result)">
+            <Parameter Name="examid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spResultinsert">
+            <Parameter Name="examfid" Mode="In" Type="String" />
+            <Parameter Name="resultstatus" Mode="In" Type="String" />
+            <Parameter Name="resultscore" Mode="In" Type="Int32" />
+            <Parameter Name="totalquestion" Mode="In" Type="Int32" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="examdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="spSubjectedit">
+            <Parameter Name="subject_name" Mode="In" Type="String" />
+            <Parameter Name="category_id" Mode="In" Type="Int32" />
+            <Parameter Name="subject_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spSubjecteditfill" ReturnType="Collection(erd1.spSubjecteditfill_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spSubjectList" ReturnType="Collection(erd1.spSubjectList_Result)" />
+          <FunctionImport Name="spUserresult" ReturnType="Collection(erd1.spUserresult_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUserslogin" ReturnType="Collection(Int32)">
+            <Parameter Name="user_email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUsersRegisterinsert" ReturnType="Collection(Int32)">
+            <Parameter Name="user_fname" Mode="In" Type="String" />
+            <Parameter Name="user_lname" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUsrLogin" ReturnType="Collection(Int32)">
+            <Parameter Name="usercategory" Mode="In" Type="String" />
+            <Parameter Name="user_username" Mode="In" Type="String" />
+            <Parameter Name="user_password" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spEditexamfill_Result">
+          <Property Type="Int32" Name="exam_id" Nullable="false" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spEditquestionfill_Result">
+          <Property Type="Int32" Name="question_id" Nullable="false" />
+          <Property Type="String" Name="question_name" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_one" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_two" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_three" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_four" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="question_answer" Nullable="true" />
+          <Property Type="Int32" Name="exam_fid" Nullable="true" />
+          <Property Type="Int32" Name="exam_id" Nullable="true" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spExamList_Result">
+          <Property Type="Int32" Name="exam_id" Nullable="false" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+          <Property Type="Int32" Name="subject_id" Nullable="true" />
+          <Property Type="String" Name="subject_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_fid1" Nullable="true" />
+          <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_id" Nullable="true" />
+          <Property Type="String" Name="category_name1" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spExamListDetails_Result">
+          <Property Type="Int32" Name="exam_id" Nullable="false" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+          <Property Type="Int32" Name="subject_id" Nullable="true" />
+          <Property Type="String" Name="subject_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_fid1" Nullable="true" />
+          <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_id" Nullable="true" />
+          <Property Type="String" Name="category_name1" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spExamquestion_Result">
+          <Property Type="Int32" Name="question_id" Nullable="false" />
+          <Property Type="String" Name="question_name" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_one" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_two" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_three" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_four" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="question_answer" Nullable="true" />
+          <Property Type="Int32" Name="exam_fid" Nullable="true" />
+          <Property Type="Int32" Name="exam_id" Nullable="true" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spExamserachcategory_Result">
+          <Property Type="Int32" Name="subject_id" Nullable="false" />
+          <Property Type="String" Name="subject_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="exam_id" Nullable="false" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid1" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spgetallquestion_Result">
+          <Property Type="Int32" Name="question_id" Nullable="false" />
+          <Property Type="String" Name="question_name" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_one" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_two" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_three" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_four" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="question_answer" Nullable="true" />
+          <Property Type="Int32" Name="exam_fid" Nullable="true" />
+          <Property Type="Int32" Name="exam_id" Nullable="true" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetEvent_Result">
+          <Property Type="Int32" Name="EventID" Nullable="false" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="event_description" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="start_date" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spGetStudentList_Result">
+          <Property Type="Int32" Name="usrID" Nullable="false" />
+          <Property Type="String" Name="user_id_number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_rank" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_department" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="usercategory" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="user_fname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_lname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_gender" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="user_dob" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_force_number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_mobile" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_address" Nullable="true" MaxLength="50" />
+          <Property Type="Binary" Name="user_picture" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spGetUserInfo_Result">
+          <Property Type="Int32" Name="usrID" Nullable="false" />
+          <Property Type="String" Name="user_id_number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_rank" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_department" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="usercategory" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="user_fname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_lname" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_username" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_password" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_gender" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="user_dob" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_force_number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_mobile" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="user_address" Nullable="true" MaxLength="50" />
+          <Property Type="Binary" Name="user_picture" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spLoadMp4Files_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="description" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="upload_date" Nullable="true" />
+          <Property Type="String" Name="path" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="spLoadpdffiles_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="description" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="upload_date" Nullable="true" />
+          <Property Type="String" Name="path" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="spLoadpptfiles_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="description" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="upload_date" Nullable="true" />
+          <Property Type="String" Name="path" Nullable="true" MaxLength="300" />
+        </ComplexType>
+        <ComplexType Name="spQuestionserachexam_Result">
+          <Property Type="Int32" Name="question_id" Nullable="false" />
+          <Property Type="String" Name="question_name" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_one" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_two" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_three" Nullable="true" MaxLength="4000" />
+          <Property Type="String" Name="option_four" Nullable="true" MaxLength="4000" />
+          <Property Type="Int32" Name="question_answer" Nullable="true" />
+          <Property Type="Int32" Name="exam_fid" Nullable="true" />
+          <Property Type="Int32" Name="exam_id" Nullable="false" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spSubjecteditfill_Result">
+          <Property Type="Int32" Name="subject_id" Nullable="false" />
+          <Property Type="String" Name="subject_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_id" Nullable="true" />
+          <Property Type="String" Name="category_name1" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spSubjectList_Result">
+          <Property Type="Int32" Name="subject_id" Nullable="false" />
+          <Property Type="String" Name="subject_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="String" Name="category_name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="category_id" Nullable="true" />
+          <Property Type="String" Name="category_name1" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spUserresult_Result">
+          <Property Type="Int32" Name="result_id" Nullable="false" />
+          <Property Type="String" Name="result_status" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="result_score" Nullable="true" />
+          <Property Type="String" Name="user_email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="exam_fid" Nullable="true" />
+          <Property Type="DateTime" Name="exam_date" Nullable="true" />
+          <Property Type="Int32" Name="exam_id" Nullable="false" />
+          <Property Type="String" Name="exam_name" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="exam_description" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="exam_date1" Nullable="true" />
+          <Property Type="Int32" Name="exam_duration" Nullable="true" />
+          <Property Type="Int32" Name="exam_marks" Nullable="true" />
+          <Property Type="Int32" Name="exam_negativemarks" Nullable="true" />
+          <Property Type="Int32" Name="exam_totalquestion" Nullable="true" />
+          <Property Type="Int32" Name="category_fid" Nullable="true" />
+          <Property Type="Int32" Name="subject_fid" Nullable="true" />
+          <Property Type="Int32" Name="exampass_marks" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="erd1StoreContainer" CdmEntityContainer="erd">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="erd1.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+                <ScalarProperty Name="admin_email" ColumnName="admin_email" />
+                <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="erd1.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="exams">
+            <EntityTypeMapping TypeName="erd1.exam">
+              <MappingFragment StoreEntitySet="exam">
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="questions">
+            <EntityTypeMapping TypeName="erd1.question">
+              <MappingFragment StoreEntitySet="question">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_name" ColumnName="question_name" />
+                <ScalarProperty Name="option_one" ColumnName="option_one" />
+                <ScalarProperty Name="option_two" ColumnName="option_two" />
+                <ScalarProperty Name="option_three" ColumnName="option_three" />
+                <ScalarProperty Name="option_four" ColumnName="option_four" />
+                <ScalarProperty Name="question_answer" ColumnName="question_answer" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="results">
+            <EntityTypeMapping TypeName="erd1.result">
+              <MappingFragment StoreEntitySet="result">
+                <ScalarProperty Name="result_id" ColumnName="result_id" />
+                <ScalarProperty Name="result_status" ColumnName="result_status" />
+                <ScalarProperty Name="result_score" ColumnName="result_score" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="totalquestion" ColumnName="totalquestion" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subjects">
+            <EntityTypeMapping TypeName="erd1.subject">
+              <MappingFragment StoreEntitySet="subject">
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userCategories">
+            <EntityTypeMapping TypeName="erd1.userCategory">
+              <MappingFragment StoreEntitySet="userCategory">
+                <ScalarProperty Name="user_category_id" ColumnName="user_category_id" />
+                <ScalarProperty Name="user_category_name" ColumnName="user_category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="erd1.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_fname" ColumnName="user_fname" />
+                <ScalarProperty Name="user_lname" ColumnName="user_lname" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usrdatas">
+            <EntityTypeMapping TypeName="erd1.usrdata">
+              <MappingFragment StoreEntitySet="usrdata">
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="user_id_number" ColumnName="user_id_number" />
+                <ScalarProperty Name="user_rank" ColumnName="user_rank" />
+                <ScalarProperty Name="user_department" ColumnName="user_department" />
+                <ScalarProperty Name="usercategory" ColumnName="usercategory" />
+                <ScalarProperty Name="user_fname" ColumnName="user_fname" />
+                <ScalarProperty Name="user_lname" ColumnName="user_lname" />
+                <ScalarProperty Name="user_username" ColumnName="user_username" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_gender" ColumnName="user_gender" />
+                <ScalarProperty Name="user_dob" ColumnName="user_dob" />
+                <ScalarProperty Name="user_force_number" ColumnName="user_force_number" />
+                <ScalarProperty Name="user_mobile" ColumnName="user_mobile" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_address" ColumnName="user_address" />
+                <ScalarProperty Name="user_picture" ColumnName="user_picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vents">
+            <EntityTypeMapping TypeName="erd1.vent">
+              <MappingFragment StoreEntitySet="vents">
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="event_description" ColumnName="event_description" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mp4_files">
+            <EntityTypeMapping TypeName="erd1.mp4_files">
+              <MappingFragment StoreEntitySet="mp4_files">
+                <ScalarProperty Name="vid_Id" ColumnName="vid_Id" />
+                <ScalarProperty Name="course_fid" ColumnName="course_fid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pdf_files">
+            <EntityTypeMapping TypeName="erd1.pdf_files">
+              <MappingFragment StoreEntitySet="pdf_files">
+                <ScalarProperty Name="pdf_Id" ColumnName="pdf_Id" />
+                <ScalarProperty Name="course_fid" ColumnName="course_fid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ppt_files">
+            <EntityTypeMapping TypeName="erd1.ppt_files">
+              <MappingFragment StoreEntitySet="ppt_files">
+                <ScalarProperty Name="ppt_Id" ColumnName="ppt_Id" />
+                <ScalarProperty Name="course_fid" ColumnName="course_fid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempHearts">
+            <EntityTypeMapping TypeName="erd1.TempHeart">
+              <MappingFragment StoreEntitySet="TempHeart">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+                <ScalarProperty Name="Temp" ColumnName="Temp" />
+                <ScalarProperty Name="Bmp" ColumnName="Bmp" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getExamDuration" FunctionName="erd1.Store.getExamDuration" />
+          <FunctionImportMapping FunctionImportName="spAddEvent" FunctionName="erd1.Store.spAddEvent" />
+          <FunctionImportMapping FunctionImportName="spaddexam" FunctionName="erd1.Store.spaddexam" />
+          <FunctionImportMapping FunctionImportName="spaddmp4" FunctionName="erd1.Store.spaddmp4" />
+          <FunctionImportMapping FunctionImportName="spaddpdf" FunctionName="erd1.Store.spaddpdf" />
+          <FunctionImportMapping FunctionImportName="spaddppt" FunctionName="erd1.Store.spaddppt" />
+          <FunctionImportMapping FunctionImportName="spAddquestion" FunctionName="erd1.Store.spAddquestion" />
+          <FunctionImportMapping FunctionImportName="spAdminlogin" FunctionName="erd1.Store.spAdminlogin" />
+          <FunctionImportMapping FunctionImportName="spAdminRegisterinsert" FunctionName="erd1.Store.spAdminRegisterinsert" />
+          <FunctionImportMapping FunctionImportName="spEditexam" FunctionName="erd1.Store.spEditexam" />
+          <FunctionImportMapping FunctionImportName="spEditexamfill" FunctionName="erd1.Store.spEditexamfill">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spEditexamfill_Result">
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spEditquestion" FunctionName="erd1.Store.spEditquestion" />
+          <FunctionImportMapping FunctionImportName="spEditquestionfill" FunctionName="erd1.Store.spEditquestionfill">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spEditquestionfill_Result">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_name" ColumnName="question_name" />
+                <ScalarProperty Name="option_one" ColumnName="option_one" />
+                <ScalarProperty Name="option_two" ColumnName="option_two" />
+                <ScalarProperty Name="option_three" ColumnName="option_three" />
+                <ScalarProperty Name="option_four" ColumnName="option_four" />
+                <ScalarProperty Name="question_answer" ColumnName="question_answer" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spEditUser" FunctionName="erd1.Store.spEditUser" />
+          <FunctionImportMapping FunctionImportName="spEditUser2" FunctionName="erd1.Store.spEditUser2" />
+          <FunctionImportMapping FunctionImportName="spExamList" FunctionName="erd1.Store.spExamList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spExamList_Result">
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="category_fid1" ColumnName="category_fid1" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name1" ColumnName="category_name1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spExamListDetails" FunctionName="erd1.Store.spExamListDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spExamListDetails_Result">
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="category_fid1" ColumnName="category_fid1" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name1" ColumnName="category_name1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spExamquestion" FunctionName="erd1.Store.spExamquestion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spExamquestion_Result">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_name" ColumnName="question_name" />
+                <ScalarProperty Name="option_one" ColumnName="option_one" />
+                <ScalarProperty Name="option_two" ColumnName="option_two" />
+                <ScalarProperty Name="option_three" ColumnName="option_three" />
+                <ScalarProperty Name="option_four" ColumnName="option_four" />
+                <ScalarProperty Name="question_answer" ColumnName="question_answer" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spExamserachcategory" FunctionName="erd1.Store.spExamserachcategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spExamserachcategory_Result">
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid1" ColumnName="category_fid1" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spgetallquestion" FunctionName="erd1.Store.spgetallquestion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spgetallquestion_Result">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_name" ColumnName="question_name" />
+                <ScalarProperty Name="option_one" ColumnName="option_one" />
+                <ScalarProperty Name="option_two" ColumnName="option_two" />
+                <ScalarProperty Name="option_three" ColumnName="option_three" />
+                <ScalarProperty Name="option_four" ColumnName="option_four" />
+                <ScalarProperty Name="question_answer" ColumnName="question_answer" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetEvent" FunctionName="erd1.Store.spGetEvent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spGetEvent_Result">
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="event_description" ColumnName="event_description" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetStudentList" FunctionName="erd1.Store.spGetStudentList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spGetStudentList_Result">
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="user_id_number" ColumnName="user_id_number" />
+                <ScalarProperty Name="user_rank" ColumnName="user_rank" />
+                <ScalarProperty Name="user_department" ColumnName="user_department" />
+                <ScalarProperty Name="usercategory" ColumnName="usercategory" />
+                <ScalarProperty Name="user_fname" ColumnName="user_fname" />
+                <ScalarProperty Name="user_lname" ColumnName="user_lname" />
+                <ScalarProperty Name="user_username" ColumnName="user_username" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_gender" ColumnName="user_gender" />
+                <ScalarProperty Name="user_dob" ColumnName="user_dob" />
+                <ScalarProperty Name="user_force_number" ColumnName="user_force_number" />
+                <ScalarProperty Name="user_mobile" ColumnName="user_mobile" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_address" ColumnName="user_address" />
+                <ScalarProperty Name="user_picture" ColumnName="user_picture" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spGetUserInfo" FunctionName="erd1.Store.spGetUserInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spGetUserInfo_Result">
+                <ScalarProperty Name="usrID" ColumnName="usrID" />
+                <ScalarProperty Name="user_id_number" ColumnName="user_id_number" />
+                <ScalarProperty Name="user_rank" ColumnName="user_rank" />
+                <ScalarProperty Name="user_department" ColumnName="user_department" />
+                <ScalarProperty Name="usercategory" ColumnName="usercategory" />
+                <ScalarProperty Name="user_fname" ColumnName="user_fname" />
+                <ScalarProperty Name="user_lname" ColumnName="user_lname" />
+                <ScalarProperty Name="user_username" ColumnName="user_username" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_gender" ColumnName="user_gender" />
+                <ScalarProperty Name="user_dob" ColumnName="user_dob" />
+                <ScalarProperty Name="user_force_number" ColumnName="user_force_number" />
+                <ScalarProperty Name="user_mobile" ColumnName="user_mobile" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_address" ColumnName="user_address" />
+                <ScalarProperty Name="user_picture" ColumnName="user_picture" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spInsertNewUser" FunctionName="erd1.Store.spInsertNewUser" />
+          <FunctionImportMapping FunctionImportName="spLoadMp4Files" FunctionName="erd1.Store.spLoadMp4Files">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spLoadMp4Files_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spLoadpdffiles" FunctionName="erd1.Store.spLoadpdffiles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spLoadpdffiles_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spLoadpptfiles" FunctionName="erd1.Store.spLoadpptfiles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spLoadpptfiles_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="upload_date" ColumnName="upload_date" />
+                <ScalarProperty Name="path" ColumnName="path" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spQuestionserachexam" FunctionName="erd1.Store.spQuestionserachexam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spQuestionserachexam_Result">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_name" ColumnName="question_name" />
+                <ScalarProperty Name="option_one" ColumnName="option_one" />
+                <ScalarProperty Name="option_two" ColumnName="option_two" />
+                <ScalarProperty Name="option_three" ColumnName="option_three" />
+                <ScalarProperty Name="option_four" ColumnName="option_four" />
+                <ScalarProperty Name="question_answer" ColumnName="question_answer" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spResultinsert" FunctionName="erd1.Store.spResultinsert" />
+          <FunctionImportMapping FunctionImportName="spSubjectedit" FunctionName="erd1.Store.spSubjectedit" />
+          <FunctionImportMapping FunctionImportName="spSubjecteditfill" FunctionName="erd1.Store.spSubjecteditfill">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spSubjecteditfill_Result">
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name1" ColumnName="category_name1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spSubjectList" FunctionName="erd1.Store.spSubjectList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spSubjectList_Result">
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name1" ColumnName="category_name1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spUserresult" FunctionName="erd1.Store.spUserresult">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="erd1.spUserresult_Result">
+                <ScalarProperty Name="result_id" ColumnName="result_id" />
+                <ScalarProperty Name="result_status" ColumnName="result_status" />
+                <ScalarProperty Name="result_score" ColumnName="result_score" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="totalquestion" ColumnName="totalquestion" />
+                <ScalarProperty Name="exam_fid" ColumnName="exam_fid" />
+                <ScalarProperty Name="exam_date" ColumnName="exam_date" />
+                <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+                <ScalarProperty Name="exam_name" ColumnName="exam_name" />
+                <ScalarProperty Name="exam_description" ColumnName="exam_description" />
+                <ScalarProperty Name="exam_date1" ColumnName="exam_date1" />
+                <ScalarProperty Name="exam_duration" ColumnName="exam_duration" />
+                <ScalarProperty Name="exam_marks" ColumnName="exam_marks" />
+                <ScalarProperty Name="exam_negativemarks" ColumnName="exam_negativemarks" />
+                <ScalarProperty Name="exam_totalquestion" ColumnName="exam_totalquestion" />
+                <ScalarProperty Name="category_fid" ColumnName="category_fid" />
+                <ScalarProperty Name="subject_fid" ColumnName="subject_fid" />
+                <ScalarProperty Name="exampass_marks" ColumnName="exampass_marks" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spUserslogin" FunctionName="erd1.Store.spUserslogin" />
+          <FunctionImportMapping FunctionImportName="spUsersRegisterinsert" FunctionName="erd1.Store.spUsersRegisterinsert" />
+          <FunctionImportMapping FunctionImportName="spUsrLogin" FunctionName="erd1.Store.spUsrLogin" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

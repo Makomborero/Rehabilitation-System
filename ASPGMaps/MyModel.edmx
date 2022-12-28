@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MyDatabaseModelStoreContainer">
+          <EntitySet Name="HotelMaster" EntityType="MyDatabaseModel.Store.HotelMaster" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="HotelMaster">
+          <Key>
+            <PropertyRef Name="HotelID" />
+          </Key>
+          <Property Name="HotelID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HotelArea" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="HotelName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LocLat" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LocLong" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReadMoreUrl" Type="varchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyDatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MyDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HotelMasters" EntityType="MyDatabaseModel.HotelMaster" />
+        </EntityContainer>
+        <EntityType Name="HotelMaster">
+          <Key>
+            <PropertyRef Name="HotelID" />
+          </Key>
+          <Property Name="HotelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HotelArea" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="HotelName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LocLat" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LocLong" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ReadMoreUrl" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyDatabaseModelStoreContainer" CdmEntityContainer="MyDatabaseEntities">
+          <EntitySetMapping Name="HotelMasters">
+            <EntityTypeMapping TypeName="MyDatabaseModel.HotelMaster">
+              <MappingFragment StoreEntitySet="HotelMaster">
+                <ScalarProperty Name="HotelID" ColumnName="HotelID" />
+                <ScalarProperty Name="HotelArea" ColumnName="HotelArea" />
+                <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+                <ScalarProperty Name="LocLat" ColumnName="LocLat" />
+                <ScalarProperty Name="LocLong" ColumnName="LocLong" />
+                <ScalarProperty Name="ReadMoreUrl" ColumnName="ReadMoreUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

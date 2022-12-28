@@ -1,0 +1,2014 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MindFusion.Mapping</name>
+    </assembly>
+    <members>
+        <member name="T:MindFusion.Mapping.TextAlignment">
+            <summary>
+            Specifies text alignment.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.TextAlignment.Near">
+            <summary>
+            Indicates top or left alignment.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.TextAlignment.Center">
+            <summary>
+            Indicates center alignment.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.TextAlignment.Far">
+            <summary>
+            Indicates right or bottom alignment.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.NullShape">
+            <summary>
+            Represents a null shape with no geometric data; often used as a
+            place holder until data becomes available.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Shape">
+            <summary>
+            Represents geometrical shapes displayed on a map.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.MapElement">
+            <summary>
+            Represents visual elements of a map that can be drawn and hit-tested.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.MapElement.#ctor">
+            <summary>
+            Initializes a new instance of the MapElement class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.MapElement.Draw(MindFusion.Mapping.ICanvas)">
+            <summary>
+            Draws this map element on the specified drawing surface.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapElement.Highlight(MindFusion.Mapping.ICanvas)">
+            <summary>
+            Draws a highlight of this map element.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapElement.DrawLabel(MindFusion.Mapping.ICanvas)">
+            <summary>
+            Draws the label of this map element.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapElement.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            Tests whether this map element contains the specified point.
+            </summary>
+            <param name="point">A Point representing a location on the map.</param>
+            <param name="transform">An ITransform representing the transform currently used to render the map.</param>
+            <returns>true if this element contains the specified point, otherwise false.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.MapElement.Label">
+            <summary>
+            Gets or sets the label of this map element.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Shape.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the Shape class.
+            </summary>
+            <param name="id">The record number of this shape in the ESRI map file.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Shape.GetCenter">
+            <summary>
+            Gets the center point of this shape.
+            </summary>
+            <returns>A Point representing the shape's center.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Shape.GetBoundingBox">
+            <summary>
+            Gets the bounding box of this shape.
+            </summary>
+            <returns>A Rect representing the shape's bounding box.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Shape.ClearCache">
+            <summary>
+            Clears any cached values associated with the shape for the current zoom level.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Shape.SaveTo(System.IO.BinaryWriter)">
+            <summary>
+            Saves this shape to the specified stream.
+            </summary>
+            <param name="writer">A BinaryWriter used to write the shape's data to a stream.</param>
+        </member>
+        <member name="F:MindFusion.Mapping.Shape.Id">
+            <summary>
+            The record number of this shape in the ESRI map file.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Shape.GetPoints">
+            <summary>
+            Returns the vertex points of this shape.
+            </summary>
+            <returns>A List containing the shape's vertices.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.Color">
+            <summary>
+            Gets or sets the index of the shape's color within the current color palette.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.HitTestDistance">
+            <summary>
+            Gets or set the current hit test threshold distance.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.Type">
+            <summary>
+            Gets the ESRI shape type of this Shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.DatabaseRow">
+            <summary>
+            Gets the DBF database row associated with this Shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.PenKey">
+            <summary>
+            Gets or sets a key used to associate a pen with this shape's map feature.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.ZIndex">
+            <summary>
+            Gets or sets the shape's Z order index.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.Size">
+            <summary>
+            Gets the shape's area.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Shape.IsStreetShape">
+            <summary>
+            Gets or sets whether this object represents an OpenStreetMap shape.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.NullShape.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the NullShape class.
+            </summary>
+            <param name="id">The record number of this shape in the ESRI map file.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.NullShape.SaveTo(System.IO.BinaryWriter)">
+            <summary>
+            Shape.SaveTo override.
+            </summary>
+            <param name="writer">A BinaryWriter used to write the shape's data to a stream.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.NullShape.Draw(MindFusion.Mapping.ICanvas)">
+            <summary>
+            MapElement.Draw override.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.NullShape.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            MapElement.HitTest override.
+            </summary>
+            <param name="point">A Point representing a location on the map.</param>
+            <param name="transform">An ITransform representing the transform currently used to render the map.</param>
+            <returns>true if this element contains the specified point, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.NullShape.GetCenter">
+            <summary>
+            Shape.GetCenter override.
+            </summary>
+            <returns>A Point representing the shape's center.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.NullShape.GetBoundingBox">
+            <summary>
+            Shape.GetBoundingBox override.
+            </summary>
+            <returns>A Rect representing the shape's bounding box.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.NullShape.Type">
+            <summary>
+            Shape.Type override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.RuntimePolicy">
+            <summary>
+            Contains environment settings to use in implementation for current platform.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.RuntimePolicy.DefaultFontSize">
+            <summary>
+            The default font size.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.RuntimePolicy.UseCaching">
+            <summary>
+            Specifies whether to cache shape coordinates.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.RuntimePolicy.DrawHighlights">
+            <summary>
+            Specifies whether highlights should be drawn by the base layer class.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.RuntimePolicy.RunningThreads">
+            <summary>
+            Identifies if there are worker threads still running.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.RuntimePolicy.CharEncoding">
+            <summary>
+            Specifies default encoding of text fields in database.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Label">
+            <summary>
+            Represents a text label associated with map element.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Label.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Label class.
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:MindFusion.Mapping.Label.Invalidate">
+            <summary>
+            Invalidates the label's position, requesting a new layout.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.FontName">
+            <summary>
+            Gets or sets the name of the font used to render the label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.FontSize">
+            <summary>
+            Gets or sets the size of the font used to render the label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.Text">
+            <summary>
+            Gets or sets the text of the label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.BoundingBox">
+            <summary>
+            Gets the bounds of the label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.RotationAngle">
+            <summary>
+            Gets the rotation angle of the label.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.Rotate">
+            <summary>
+            Gets or sets whether the label should rotate to follow shape's direction.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.WordWrap">
+            <summary>
+            Gets or sets whether the label's text should wrap.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Label.Visible">
+            <summary>
+            Gets or sets whether the label should be visible.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.DecorationLayerBase`2">
+            <summary>
+            Represents a layer containing decorative elements.
+            </summary>
+            <typeparam name="TColor">Specifies the type used to represent colors.</typeparam>
+            <typeparam name="TPalette">Specifies the type used to represent color palettes.</typeparam>
+        </member>
+        <member name="T:MindFusion.Mapping.Layer`2">
+            <summary>
+            Represents a map layer.
+            </summary>
+            <typeparam name="TColor">Specifies the type used to represent colors.</typeparam>
+            <typeparam name="TPalette">Specifies the type used to represent color palettes.</typeparam>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.#ctor">
+            <summary>
+            Initializes a new instance of the Layer class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.Draw(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Draws the elements of this layer on the specified canvas.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.Draw(MindFusion.Mapping.MapElement,MindFusion.Mapping.ICanvas)">
+            <summary>
+            Draws the specified map element on the specified canvas.
+            </summary>
+            <param name="element">A MapElement instance that should be rendered on the canvas.</param>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.DrawHighlights(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Draws the layer's highlighted elements on the specified canvas.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.DrawLabels(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Draws the labels of elements of this layer on the specified canvas.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            Returns the map element located at the specified point.
+            </summary>
+            <param name="mousePosition">A Point instance specifying location.</param>
+            <param name="transform">The transform currently used to draw the map.</param>
+            <returns>The MapElement that contains the specified point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.Highlight(MindFusion.Mapping.MapElement)">
+            <summary>
+            Highlights the specified map element.
+            </summary>
+            <param name="mapElement">The MapElement that should be highlighted.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.Select(MindFusion.Mapping.MapElement)">
+            <summary>
+            Selects the specified map element.
+            </summary>
+            <param name="mapElement">The MapElement that should be selected.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.Select(MindFusion.Mapping.Rect)">
+            <summary>
+            Selects map elements that intersect with the specified rectangle.
+            </summary>
+            <param name="bounds">A Rect specifying the selection boundaries.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.Toggle(MindFusion.Mapping.MapElement)">
+            <summary>
+            Toggles the selection state the specified map element.
+            </summary>
+            <param name="mapElement">The MapElement whose selection state should be toggled.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.ClearCache">
+            <summary>
+            Clears any cached values associated with the layer for the current zoom level.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.OnAsyncLoadComplete">
+            <summary>
+            Raises the AsyncLoadComplete event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.OnAsyncDatabaseLoadComplete">
+            <summary>
+            Raises the AsyncDatabaseLoadComplete event.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+            <param name="propertyName">A string specifying the name of the property whose value has changed.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.OnBeginLoad(System.Object,System.EventArgs)">
+            <summary>
+            Raises the BeginLoad event.
+            </summary>
+            <param name="sender">
+            The source of the event.
+            </param>
+            <param name="e">
+            An object providing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Mapping.Layer`2.OnEndLoad(System.Object,System.EventArgs)">
+            <summary>
+            Raises the EndLoad event.
+            </summary>
+            <param name="sender">
+            The source of the event.
+            </param>
+            <param name="e">
+            An object providing the event data.
+            </param>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.BoundingBox">
+            <summary>
+            Returns the bounding box of elements in this layer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.Visible">
+            <summary>
+            Gets or sets whether this layer should be visible in the map view.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.EnableHighlight">
+            <summary>
+            Gets or sets whether map elements should be automatically highlighted
+            when the mouse hovers over them.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.EnableSelection">
+            <summary>
+            Gets or sets whether map elements should be selected when the user clicks them.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.FillColors">
+            <summary>
+            Gets or sets the colors used to fill map elements on this layer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.LineColor">
+            <summary>
+            Gets or sets the line color used to draw elements on this layer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.HighlightColor">
+            <summary>
+            Gets or sets the color used to highlight elements on this layer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Layer`2.Palette">
+            <summary>
+            Gets or sets the color palette associated with this layer.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Layer`2.PropertyChanged">
+            <summary>
+            Raised when the value of a property of the Layer class is changed.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Layer`2.AsyncLoadComplete">
+            <summary>
+            Raised when an asynchronous shapefile-read operation is completed.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Layer`2.AsyncDatabaseLoadComplete">
+            <summary>
+            Raised when an asynchronous database-read operation is completed.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Layer`2.BeginLoad">
+            <summary>
+            Raised when the component starts loading map data from a file or memory stream.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Layer`2.EndLoad">
+            <summary>
+            Raised when the component ends loading map data from a file or memory stream.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.#ctor(MindFusion.Mapping.Rect)">
+            <summary>
+            Initializes a new instance of the DecorationLayerBase class.
+            </summary>
+            <param name="boundingBox">A Rect specifying the map area displayed on this layer.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.Draw(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.Draw override.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.DrawHighlights(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.DrawHighlights override.
+            </summary>
+            <param name="canvas"></param>
+            <param name="bounds"></param>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.DrawLabels(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.DrawLabels override.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            Layer.HitTest override.
+            </summary>
+            <param name="mousePosition">A Point instance specifying location.</param>
+            <param name="transform">The transform currently used to draw the map.</param>
+            <returns>The MapElement that contains the specified point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.Highlight(MindFusion.Mapping.MapElement)">
+            <summary>
+            Layer.Highlight override.
+            </summary>
+            <param name="mapElement">The MapElement that should be highlighted.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.Select(MindFusion.Mapping.MapElement)">
+            <summary>
+            Layer.Select override.
+            </summary>
+            <param name="mapElement">The MapElement that should be selected.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.Select(MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.Select override.
+            </summary>
+            <param name="bounds">A Rect specifying the selection boundaries.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.DecorationLayerBase`2.Toggle(MindFusion.Mapping.MapElement)">
+            <summary>
+            Layer.Toggle override.
+            </summary>
+            <param name="mapElement">The MapElement whose selection state should be toggled.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.DecorationLayerBase`2.BoundingBox">
+            <summary>
+            Layer.BoundingBox override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.DecorationLayerBase`2.Decorations">
+            <summary>
+            Gets the list of decorations displayed in this layer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.DecorationLayerBase`2.Selection">
+            <summary>
+            Gets the list of selected decorations.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Decoration">
+            <summary>
+            Represents a decoration element drawn in a separate layer over the map.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Decoration.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the Decoration class.
+            </summary>
+            <param name="latitude">Specifies the latitude associated with this element.</param>
+            <param name="longitude">Specifies the longitude associated with this element.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Decoration.GetLocation">
+            <summary>
+            Gets the decoration's location.
+            </summary>
+            <returns>A Point containing the decoration's location.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Decoration.Longitude">
+            <summary>
+            Gets or sets the longitude associated with this decoration.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Decoration.Latitude">
+            <summary>
+            Gets or sets the latitude associated with this decoration.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Point">
+            <summary>
+            Represents a point on the map with X (longitude) and Y (latitude) coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.#ctor(System.Int32,System.IO.BinaryReader)">
+            <summary>
+            Initializes a new instance of the Point class.
+            </summary>
+            <param name="id">The record number of this point in the ESRI map file.</param>
+            <param name="reader">A BinaryReader used to read the point data.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.#ctor(System.Int32,MindFusion.Mapping.StreetShape)">
+            <summary>
+            Initializes a new instance of the Point class.
+            </summary>
+            <param name="id">The point's identifier in OpenStreetMap file.</param>
+            <param name="shape">A StreetShape containing the shape's attributes.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the Point class.
+            </summary>
+            <param name="x">A double value specifying longitude.</param>
+            <param name="y">A double value specifying latitude.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.SaveTo(System.IO.BinaryWriter)">
+            <summary>
+            Saves the point to the specified stream.
+            </summary>
+            <param name="writer">A BinaryWriter used to write the point data.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Distance(MindFusion.Mapping.Point)">
+            <summary>
+            Returns the distance from this point to the specified point.
+            </summary>
+            <param name="point">A Point instance.</param>
+            <returns>A double value representing the distance between the two points.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Angle(MindFusion.Mapping.Point)">
+            <summary>
+            Returns the angle between the X axis and the line passinh through specified point and this point.
+            </summary>
+            <param name="point">Specifies the second point of line segment.</param>
+            <returns>The angle between specified line and X axis.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Clone">
+            <summary>
+            Clones this point.
+            </summary>
+            <returns>A Point instance with the same coordinates as this point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Draw(MindFusion.Mapping.ICanvas)">
+            <summary>
+            MapElement.Draw override.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.DrawLabel(MindFusion.Mapping.ICanvas)">
+            <summary>
+            MapElement.DrawLabel override.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Highlight(MindFusion.Mapping.ICanvas)">
+            <summary>
+            MapElement.Highlight override.
+            </summary>
+            <param name="canvas">An ICanvas representing the drawing surface.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            MapElement.HitTest override.
+            </summary>
+            <param name="point">A Point representing a location on the map.</param>
+            <param name="transform">An ITransform representing the transform currently used to render the map.</param>
+            <returns>true if this element contains the specified point, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.GetCenter">
+            <summary>
+            Shape.GetCenter override.
+            </summary>
+            <returns>A Point representing the shape's center.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.GetBoundingBox">
+            <summary>
+            Shape.GetBoundingBox override.
+            </summary>
+            <returns>A Rect representing the shape's bounding box.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.GetPoints">
+            <summary>
+            Shape.GetPoints override.
+            </summary>
+            <returns>A list containing this point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.ClearCache">
+            <summary>
+            Clears cached label positions.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.ToString">
+            <summary>
+            Object.ToString override.
+            </summary>
+            <returns>The string representation of this point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Equals(System.Object)">
+            <summary>
+            Object.Equals override.
+            </summary>
+            <param name="obj">The object to compare with this object.</param>
+            <returns>true if the specified Object is equal to the current Object, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.Equals(MindFusion.Mapping.Point)">
+            <summary>
+            Determines whether the specified Point is equal to this Point.
+            </summary>
+            <param name="other">The Point to compare with this point.</param>
+            <returns>true if the specified Point is equal to the current Point, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Point.GetHashCode">
+            <summary>
+            Object.GetHashCode override.
+            </summary>
+            <returns>A hash code for the this point.</returns>
+        </member>
+        <member name="F:MindFusion.Mapping.Point.X">
+            <summary>
+            The X coordinate of this Point.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.Point.Y">
+            <summary>
+            The Y coordinate of this Point.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Point.Type">
+            <summary>
+            Shape.Type override.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.ICanvasWithPalette`1">
+            <summary>
+            Represents a drawing canvas with an associated palette of colors.
+            </summary>
+            <typeparam name="TColor">The type used to represent colors.</typeparam>
+        </member>
+        <member name="T:MindFusion.Mapping.ICanvas">
+            <summary>
+            Represents a drawing canvas.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.DrawString(System.String,MindFusion.Mapping.Point,MindFusion.Mapping.Rect,System.String,System.Double)">
+            <summary>
+            Draws a string with the specified attributes.
+            </summary>
+            <param name="s">The string that should be drawn.</param>
+            <param name="point">A Point specifying the string location.</param>
+            <param name="bounds">A Rect specifying the string bounding box.</param>
+            <param name="fontName">The name of the font used to render the string.</param>
+            <param name="fontSize">The size of the font used to render the string.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.DrawPoint(MindFusion.Mapping.Point)">
+            <summary>
+            Draws a point marker at the specified location.
+            </summary>
+            <param name="point">The Point to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.DrawPolyline(System.Collections.Generic.IList{MindFusion.Mapping.Point})">
+            <summary>
+            Draws a polyline.
+            </summary>
+            <param name="points">A list of points specifying the polyline segments.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.FillPolygon(System.Collections.Generic.IList{MindFusion.Mapping.Point})">
+            <summary>
+            Fills a polygon.
+            </summary>
+            <param name="points">A list of points specifying the polygon borders.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.ClipExclude(System.Collections.Generic.IList{MindFusion.Mapping.Point})">
+            <summary>
+            Excludes the specified area from the current clip region.
+            </summary>
+            <param name="points">A list of points specifying the area to exclude.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.ClipExclude(System.Collections.Generic.List{System.Collections.Generic.IList{MindFusion.Mapping.Point}})">
+            <summary>
+            Excludes the specified areas from the current clip region.
+            </summary>
+            <param name="points">A list of points specifying the area to exclude.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.ResetClip">
+            <summary>
+            Resets the current clip region.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.SetFillColor(System.Int32)">
+            <summary>
+            Sets the current fill color to the specified color from the palette.
+            </summary>
+            <param name="color"></param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.SetLineColor">
+            <summary>
+            Sets the current line color to the line color associated with this canvas.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.SetHighlightColor">
+            <summary>
+            Sets the current fill and line colors to the highlight color associated with this canvas.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.SetTextAlignment(MindFusion.Mapping.TextAlignment,MindFusion.Mapping.TextAlignment)">
+            <summary>
+            Sets the current text alignment.
+            </summary>
+            <param name="horzAlignment">A TextAlignment member specifying the horizontal alignment.</param>
+            <param name="vertAlignment">A TextAlignment member specifying the vertical alignment.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.GetPixelSize">
+            <summary>
+            Gets the size of a pixel at the current zoom level.
+            </summary>
+            <returns>A double value specifying the pixel size.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.DrawLabel(MindFusion.Mapping.Label)">
+            <summary>
+            Draws a Label.
+            </summary>
+            <param name="label">The Label instance to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.UpdateLabel(MindFusion.Mapping.Shape)">
+            <summary>
+            Updates bounding box of shape's label from shape coordinates.
+            </summary>
+            <param name="shape">A Shape instance.</param>
+            <returns>The label's bounding box.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.ArrangeLabel(MindFusion.Mapping.Shape,System.Collections.Generic.List{MindFusion.Mapping.Rect})">
+            <summary>
+            Arranges shape's labels so that they do not overlap specified obstacles.
+            </summary>
+            <param name="shape">A Shape whose labels to arrange.</param>
+            <param name="obstacles">A list of obstacles.</param>
+            <returns>true if non-overlapping position has been found, or false otherwise.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.GetRotatedBounds(MindFusion.Mapping.Rect,System.Single)">
+            <summary>
+            Gets the bounding box of a rotated rectangle.
+            </summary>
+            <param name="rect">A Rect to rotate.</param>
+            <param name="angle">Rotation angle.</param>
+            <returns>A Rect that bounds the specified rotated rectangle.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.SetPen(MindFusion.Mapping.MapFeature,System.Boolean)">
+            <summary>
+            Sets the current pen to the one associated with specified map feature.
+            </summary>
+            <param name="penKey">A MapFeature used as key in StreetMapPens table.</param>
+            <param name="isBorderPen">true if the pen will be used to outline a closed shape, or false otherwise.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.ICanvas.SetBrush(MindFusion.Mapping.MapFeature)">
+            <summary>
+            Sets the current brush to the one associated with specified map feature.
+            </summary>
+            <param name="brushKey">A MapFeature used as key in StreetMapBrushes table.</param>
+        </member>
+        <member name="P:MindFusion.Mapping.ICanvasWithPalette`1.Palette">
+            <summary>
+            Gets or sets the color palette associated with this drawing canvas.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.IPalette`1">
+            <summary>
+            Represents a palette of colors.
+            </summary>
+            <typeparam name="TColor">The type representing colors.</typeparam>
+        </member>
+        <member name="P:MindFusion.Mapping.IPalette`1.FillColors">
+            <summary>
+            Gets or sets an array of fill colors.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.IPalette`1.LineColor">
+            <summary>
+            Gets or sets the line color.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.IPalette`1.HighlightColor">
+            <summary>
+            Gets or sets the highlight color.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Column">
+            <summary>
+            Represents a database column.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Column.ToString">
+            <summary>
+            Object.ToString override.
+            </summary>
+            <returns>Returns the column name.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Column.Name">
+            <summary>
+            Gets the column name.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Column.Type">
+            <summary>
+            Gets the DBF column type.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Column.Length">
+            <summary>
+            Gets the length of fields in this column.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Column.Decimals">
+            <summary>
+            Gets the number of decimals stored for numeric values in this column.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.ColumnType">
+            <summary>
+            Specifies a DBF column type.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Character">
+            <summary>
+            Indicates that the column stores character data.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Number">
+            <summary>
+            Indicates that the column stores numeric data.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Boolean">
+            <summary>
+            Indicates that the column stores Boolean data.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Date">
+            <summary>
+            Indicates that the column stores date values.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Memo">
+            <summary>
+            Indicates that the column stores memo data.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Binary">
+            <summary>
+            Indicates that the column stores binary data.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.FloatingPoint">
+            <summary>
+            Indicates that the column stores floating point values.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ColumnType.Integer">
+            <summary>
+            Indicates that the column stores integer values.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Vector">
+            <summary>
+            Represents a two-dimensional vector.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.#ctor">
+            <summary>
+             Initializes a new instance of the Vector class with zero length.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.#ctor(System.Double,System.Double)">
+            <summary>
+             Initializes a new instance of the Vector structure with specified coordinates.
+            </summary>
+            <param name="x">X coordinate of the vector.</param>
+            <param name="y">Y coordinate of the vector.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.#ctor(MindFusion.Mapping.Point,MindFusion.Mapping.Point)">
+            <summary>
+             Initializes a new instance of the Vector structure from the specified points.
+            </summary>
+            <param name="p1">Origin point of the vector.</param>
+            <param name="p2">End point of the vector.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Equals(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Compares two vectors for equality.
+            </summary>
+            <param name="vector1">The first vector to compare.</param>
+            <param name="vector2">The second vector to compare.</param>
+            <returns>true if the vectors are equal, or otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Equals(System.Object)">
+            <summary>
+            Object.Equals override.
+            </summary>
+            <param name="o">The object to compare this vector with.</param>
+            <returns>true if the objects are equal, or otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Equals(MindFusion.Mapping.Vector)">
+            <summary>
+            Compare this vector with the specified vector for equality.
+            </summary>
+            <param name="value">The vector to compare with.</param>
+            <returns>true if the vectors are equal, or otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.GetHashCode">
+            <summary>
+            Object.GetHashCode override.
+            </summary>
+            <returns>The vector's hash code.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.ToString">
+            <summary>
+            Object.ToString override.
+            </summary>
+            <returns>The vector's string representation.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.ToString(System.IFormatProvider)">
+            <summary>
+            Returns the vector's string representation in specified culture.
+            </summary>
+            <param name="provider">An IFormatProvider (e.g. CultureInfo) specifying number format.</param>
+            <returns>The vector's string representation.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.ConvertToString(System.String,System.IFormatProvider)">
+            <summary>
+            Returns the vector's string representation in specified format and culture.
+            </summary>
+            <param name="format">A number format specifier.</param>
+            <param name="provider">An IFormatProvider (e.g. CultureInfo) specifying number format.</param>
+            <returns>The vector's string representation.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Normalize">
+            <summary>
+            Normalizes this vector.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.CrossProduct(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Returns the cross product of two vectors.
+            </summary>
+            <param name="vector1">A Vector instance.</param>
+            <param name="vector2">A Vector instance.</param>
+            <returns>The cross product of specified vectors.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.AngleBetween(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Returns the angle between two vectors.
+            </summary>
+            <param name="vector1">A Vector instance.</param>
+            <param name="vector2">A Vector instance.</param>
+            <returns>The angle between specified vectors.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Negate">
+            <summary>
+            Reverses this vector's direction.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Subtract(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Subtracts two vectors.
+            </summary>
+            <param name="vector1">A Vector instance.</param>
+            <param name="vector2">A Vector instance.</param>
+            <returns>The difference between specified vectors.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Add(MindFusion.Mapping.Vector,MindFusion.Mapping.Point)">
+            <summary>
+            Adds vector to a point.
+            </summary>
+            <param name="vector">A Vector instance.</param>
+            <param name="point">A Point instance.</param>
+            <returns>A point offset from the specified point by adding specified vector.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Multiply(MindFusion.Mapping.Vector,System.Double)">
+            <summary>
+            Multiplies a vector by a scalar value.
+            </summary>
+            <param name="vector">A Vector instance.</param>
+            <param name="scalar">A double value.</param>
+            <returns>A Vector with same direction and multiplied length.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Multiply(System.Double,MindFusion.Mapping.Vector)">
+            <summary>
+            Multiplies a vector by a scalar value.
+            </summary>
+            <param name="scalar">A double value.</param>
+            <param name="vector">A Vector instance.</param>
+            <returns>A Vector with same direction and multiplied length.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Divide(MindFusion.Mapping.Vector,System.Double)">
+            <summary>
+            Divides a vector by a scalar value.
+            </summary>
+            <param name="vector">A Vector instance.</param>
+            <param name="scalar">A double value.</param>
+            <returns>A Vector with same direction and divided length.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Multiply(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Multiplies two vectors.
+            </summary>
+            <param name="vector1">A Vector instance.</param>
+            <param name="vector2">A Vector instance.</param>
+            <returns>The dot product of specified vectors.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Equality(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Compares for equality.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Inequality(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Compares for inequality.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_UnaryNegation(MindFusion.Mapping.Vector)">
+            <summary>
+            Returns the vector with same length in opposite direction.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Addition(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Adds two vectors.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Add(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Adds two vectors.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Subtraction(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Subtracts two vectors.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Addition(MindFusion.Mapping.Vector,MindFusion.Mapping.Point)">
+            <summary>
+            Adds vector to a point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Multiply(MindFusion.Mapping.Vector,System.Double)">
+            <summary>
+            Multiplies vector by a scalar value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Multiply(System.Double,MindFusion.Mapping.Vector)">
+            <summary>
+            Multiplies vector by a scalar value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Division(MindFusion.Mapping.Vector,System.Double)">
+            <summary>
+            Divides vector by a scalar value.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Multiply(MindFusion.Mapping.Vector,MindFusion.Mapping.Vector)">
+            <summary>
+            Returns dot product of two vectors.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Explicit(MindFusion.Mapping.Vector)~MindFusion.Mapping.Point">
+            <summary>
+            Converts to Point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.op_Addition(MindFusion.Mapping.Point,MindFusion.Mapping.Vector)">
+            <summary>
+            Adds vector to a point.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Left(MindFusion.Mapping.Vector)">
+            <summary>
+            Returns the left vector.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Vector.Right(MindFusion.Mapping.Vector)">
+            <summary>
+            Returns the right vector.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Vector.X">
+            <summary>
+            X coordinate of the vector.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Vector.Y">
+            <summary>
+            Y coordinate of the vector.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Vector.Length">
+            <summary>
+            Returns the vector length.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Vector.LengthSquared">
+            <summary>
+            Returns the squared length.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.StreetShape">
+            <summary>
+            Represents a shape in OSM file format.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.StreetShape.#ctor(System.Xml.XmlReader,System.Collections.Generic.Dictionary{System.Int64,MindFusion.Mapping.Point})">
+            <summary>
+            Initializes a new instance of the StreetShape class.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.Id">
+            <summary>
+            Gets the Id of this shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.Points">
+            <summary>
+            Gets the collection of points, representing this shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.Label">
+            <summary>
+            Gets the text, associated with this shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.PenKey">
+            <summary>
+            Gets the pen key, associated with this shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.BrushKey">
+            <summary>
+            Gets the brush key, associated with this shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.Type">
+            <summary>
+            Gets the type of the shape.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetShape.LabelRotate">
+            <summary>
+            Indicates whether the shape's text should be rotated.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.StreetShapeType">
+            <summary>
+            Specifies the type of shapes contained in an OSM map file.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.StreetShapeType.Node">
+            <summary>
+            Indicates a node.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.StreetShapeType.Way">
+            <summary>
+            Indicates a way.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.StreetShapeType.ClosedWay">
+            <summary>
+            Indicates a closed way.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.StreetMapFeatures">
+            <summary>
+            A helper class used for OSM files import and rendering.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.StreetMapFeatures.Features">
+            <summary>
+            The list of physical map features, included in OSM format.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.StreetMapFeatures.KeyIsNull(MindFusion.Mapping.MapFeature)">
+            <summary>
+            Checks whether the provided key has a value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetMapFeatures.StreetMapPens">
+            <summary>
+            A list of pen keys used for drawing map shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.StreetMapFeatures.StreetMapBrushes">
+            <summary>
+            A list of brush keys used for drawing map shapes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.MapFeature">
+            <summary>
+            Contains OpenStreetMap key and value tags describing a map feature.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.MapFeature.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the MapFeature struct.
+            </summary>
+            <param name="key">The feature's key.</param>
+            <param name="value">The feature's value.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapFeature.GetHashCode">
+            <summary>
+            Object.GetHashCode override.
+            </summary>
+            <returns>An integer value containing the hash-code.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.MapFeature.Equals(System.Object)">
+            <summary>
+            Object.Equals override.
+            </summary>
+            <param name="obj">The object to compare with this instance.</param>
+            <returns>true if the objects are equal, or false otherwise.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.MapFeature.Key">
+            <summary>
+            Gets the map feature key.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.MapFeature.Value">
+            <summary>
+            Gets the map feature value.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Database">
+            <summary>
+            Represents the DBF database associated with an ESRI map file.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.#ctor(MindFusion.Mapping.Database)">
+            <summary>
+            Creates a new instance of the Database class.
+            </summary>
+            <param name="schema">A prototype database whose schema should be copied to this database.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.#ctor(System.String)">
+            <summary>
+            Creates a new instance of the Database class.
+            </summary>
+            <param name="fileName">Specifies the file name of the DBF database file.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.#ctor(System.IO.BinaryReader)">
+            <summary>
+            Creates a new instance of the Database class.
+            </summary>
+            <param name="reader">Specifies a stream from which to load the database data.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.GetList">
+            <summary>
+            Implements IListSource.GetList.
+            </summary>
+            <returns>An IList containing the database rows.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.SaveTo(System.String)">
+            <summary>
+            Saves this database to the specified file.
+            </summary>
+            <param name="fileName">A string value specifying the file name.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.SaveTo(System.IO.BinaryWriter)">
+            <summary>
+            Saves this database to the specified stream.
+            </summary>
+            <param name="writer">A BinaryWriter used to write the database data.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.LoadFrom(System.String)">
+            <summary>
+            Loads database data from the specified file.
+            </summary>
+            <param name="fileName">A string value specifying the file name.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Database.LoadFrom(System.IO.BinaryReader)">
+            <summary>
+            Loads database data from the specified stream.
+            </summary>
+            <param name="reader">A BinaryReader used to read database data.</param>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.Columns">
+            <summary>
+            Gets a list of columns in the database.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.Rows">
+            <summary>
+            Gets a list of rows in the database.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.Item(System.Int32)">
+            <summary>
+            Gets the column with the specified index.
+            </summary>
+            <param name="nIndex">An integer value specifying the column index.</param>
+            <returns>A Column instance representing the database column.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.Item(System.String)">
+            <summary>
+            Gets the column with the specified name.
+            </summary>
+            <param name="name">A string value specifying the column name.</param>
+            <returns>A Column instance representing the database column.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.ColumnCount">
+            <summary>
+            Returns the number of column in the database.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.RowLength">
+            <summary>
+            Returns the length in bytes of a database row.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Database.ContainsListCollection">
+            <summary>
+            Implements IListSource.ContainsListCollection.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Rect">
+            <summary>
+            A class representing a rectangular are on the map.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the Rect class.
+            </summary>
+            <param name="xMin">The minimum X value.</param>
+            <param name="yMin">The minimum Y value.</param>
+            <param name="xMax">The maximum X value.</param>
+            <param name="yMax">The maximum Y value.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.#ctor(MindFusion.Mapping.Point,MindFusion.Mapping.Point)">
+            <summary>
+            Initializes a new instance of the Rect class.
+            </summary>
+            <param name="point1">A Point specifying one of the rectangle corners.</param>
+            <param name="point2">A Point specifying the opposite rectangle corner.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.#ctor(System.IO.BinaryReader)">
+            <summary>
+            Initializes a new instance of the Rect class.
+            </summary>
+            <param name="reader">A BinaryReader used to read the rectangle coordinates.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.SaveTo(System.IO.BinaryWriter)">
+            <summary>
+            Saves the rectangle to the specified stream.
+            </summary>
+            <param name="writer">A BinaryWriter used to write the rectangle coordinates.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.ContainsPoint(MindFusion.Mapping.Point)">
+            <summary>
+            Tests whether this rectangle contains the specified point.
+            </summary>
+            <param name="point">A Point instance.</param>
+            <returns>true if this rectangle contains the point, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.ContainsPoint(MindFusion.Mapping.Point,System.Double)">
+            <summary>
+            Tests whether this rectangle contains the specified point within a threshold.
+            </summary>
+            <param name="point">A Point instance.</param>
+            <param name="threshold">A threshold value.</param>
+            <returns>true if this rectangle contains the point, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.Intersects(MindFusion.Mapping.Rect)">
+            <summary>
+            Tests whether this rectangle intersects with the specified rectangle.
+            </summary>
+            <param name="rect">A Rect instance.</param>
+            <returns>true if the rectangles intersect, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.Intersect(MindFusion.Mapping.Rect)">
+            <summary>
+            Returns the intersection of this rectangle with the specified rectangle.
+            </summary>
+            <param name="rect">A Rect instance.</param>
+            <returns>A Rect representing the intersection of the two rectangles.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.Divide">
+            <summary>
+            Divides this rectangle into four equal parts.
+            </summary>
+            <returns>An array of rectangles.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.Clone">
+            <summary>
+            Returns a copy of this rectangle.
+            </summary>
+            <returns>A Rect instance with same coordinates as this rectangle.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.GetCenter">
+            <summary>
+            Returns the rectangle center.
+            </summary>
+            <returns>A Point representing the center of this rectangle.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.GetLocation">
+            <summary>
+            Returns the min X/Y corner of this rectangle.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.Union(MindFusion.Mapping.Rect,MindFusion.Mapping.Rect)">
+            <summary>
+            Returns the union of two rectangles.
+            </summary>
+            <param name="rect1">Specifies the first rectangle.</param>
+            <param name="rect2">Specifies the second rectangle.</param>
+            <returns>A Rect instance representing the union of specified rectangles.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.SetCenter(MindFusion.Mapping.Point)">
+            <summary>
+            Moves this rectangle so that its center coincides with specified point.
+            </summary>
+            <param name="point">The point where rectangle's center should be located.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Rect.Offset(System.Double,System.Double)">
+            <summary>
+            Moves this rectangle by specified offset.
+            </summary>
+            <param name="x">Specifies horizontal offset.</param>
+            <param name="y">Specifies vertical offset.</param>
+        </member>
+        <member name="P:MindFusion.Mapping.Rect.Width">
+            <summary>
+            Gets the rectangle width.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Rect.Height">
+            <summary>
+            Gets the rectangle height.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Rect.XMin">
+            <summary>
+            Gets or set the minimum X value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Rect.YMin">
+            <summary>
+            Gets or set the minimum Y value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Rect.XMax">
+            <summary>
+            Gets or set the maximum X value.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Rect.YMax">
+            <summary>
+            Gets or set the maximum Y value.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.MapLayerBase`2">
+            <summary>
+            Represents a map layer containing geometric shapes.
+            </summary>
+            <typeparam name="TColor">Specifies the type used to represent colors.</typeparam>
+            <typeparam name="TPalette">Specifies the type used to represent color palettes.</typeparam>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.#ctor">
+            <summary>
+            Initializes a new instance of the MapLayerBase class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.Draw(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.Draw override.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.DrawStreetMap(MindFusion.Mapping.ICanvas,MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.DrawStreetMap override.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.DrawHighlights(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Overrides Layer.DrawHighlights.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.DrawLabels(MindFusion.Mapping.ICanvasWithPalette{`0},MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.DrawLabels override.
+            </summary>
+            <param name="canvas">An ICanvasWithPalette specifying the drawing canvas.</param>
+            <param name="bounds">A Rect specifying the map region to draw.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.ClearCache">
+            <summary>
+            Layer.ClearCache override.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            Layer.HitTest override.
+            </summary>
+            <param name="mousePosition">A Point instance specifying location.</param>
+            <param name="transform">The transform currently used to draw the map.</param>
+            <returns>The MapElement that contains the specified point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.Highlight(MindFusion.Mapping.MapElement)">
+            <summary>
+            Layer.Highlight override.
+            </summary>
+            <param name="mapElement">The MapElement that should be highlighted.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.Select(MindFusion.Mapping.MapElement)">
+            <summary>
+            Layer.Select override.
+            </summary>
+            <param name="mapElement">The MapElement that should be selected.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.Select(MindFusion.Mapping.Rect)">
+            <summary>
+            Layer.Select override.
+            </summary>
+            <param name="bounds">A Rect instance specifying the area in which elements should be selected.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.Toggle(MindFusion.Mapping.MapElement)">
+            <summary>
+            Layer.Toggle override.
+            </summary>
+            <param name="mapElement">The MapElement whose selection state should be toggled.</param>
+            <returns>true if the map view should be redrawn, otherwise false.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.MapLayerBase`2.OnBeginLoad(System.Object,System.EventArgs)">
+            <summary>
+            Raises the BeginLoad event.
+            </summary>
+            <param name="sender">
+            The source of the event.
+            </param>
+            <param name="e">
+            An object providing the event data.
+            </param>
+        </member>
+        <member name="P:MindFusion.Mapping.MapLayerBase`2.Map">
+            <summary>
+            Gets or sets the Map whose elements should be rendered on this layer.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.MapLayerBase`2.BoundingBox">
+            <summary>
+            Layer.BoundingBox override.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.MapLayerBase`2.Selection">
+            <summary>
+            Gets the list of selected map shapes.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Map">
+            <summary>
+            Represents a geographic map.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.#ctor">
+            <summary>
+            Initializes a new instance of the Map class.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.FromFile(System.String)">
+            <summary>
+            Creates and loads a map from the specified file.
+            </summary>
+            <param name="fileName">Specifies the file name of an ESRI map file.</param>
+            <returns>The Map loaded from the specified file.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.FromFile(System.String,System.Boolean,System.String)">
+            <summary>
+            Creates and loads a map from the specified file.
+            </summary>
+            <param name="fileName">Specifies the file name of an ESRI map file.</param>
+            <param name="loadDatabase">true to load the database associated with the specified map file, otherwise false.</param>
+            <param name="labelField">A string specifying the name of the database column whose fields should be used as map element labels.</param>
+            <returns>The Map loaded from the specified file.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.FromXml(System.String)">
+            <summary>
+            Creates and loads a map from the specified file.
+            </summary>
+            <param name="fileName">Specifies the file name of an OSM map file.</param>
+            <returns>The Map loaded from the specified file.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.Latitude(System.Double,System.Double,System.Char)">
+            <summary>
+            Converts latitude specified in arc degree, minutes, 'N'/'S' to its representation as a double value.
+            </summary>
+            <param name="degrees">Specifies the latitude arc degrees.</param>
+            <param name="minutes">Specifies the latitude arc minutes.</param>
+            <param name="ns">A char value specifying 'N' for north or 'S' for south.</param>
+            <returns>A double value representing the specified latitude.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.Latitude(System.Double,System.Double,System.Double,System.Char)">
+            <summary>
+            Converts latitude specified in arc degrees, minutes, seconds, 'N'/'S' to its representation as a double value.
+            </summary>
+            <param name="degrees">Specifies the latitude arc degrees.</param>
+            <param name="minutes">Specifies the latitude arc minutes.</param>
+            <param name="seconds">Specifies the latitude arc seconds.</param>
+            <param name="ns">A char value specifying 'N' for north or 'S' for south.</param>
+            <returns>A double value representing the specified latitude.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.Longitude(System.Double,System.Double,System.Char)">
+            <summary>
+            Converts longitude specified in arc degrees, minutes, 'E'/'W' to its representation as a double value.
+            </summary>
+            <param name="degrees">Specifies the longitude arc degrees.</param>
+            <param name="minutes">Specifies the longitude arc minutes.</param>
+            <param name="ew">A char value specifying 'E' for east or 'W' for west.</param>
+            <returns>A double value representing the specified longitude.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.Longitude(System.Double,System.Double,System.Double,System.Char)">
+            <summary>
+            Converts longitude specified in arc degrees, minutes, 'E'/'W' to its representation as a double value.
+            </summary>
+            <param name="degrees">Specifies the longitude arc degrees.</param>
+            <param name="minutes">Specifies the longitude arc minutes.</param>
+            <param name="seconds">Specifies the longitude arc seconds.</param>
+            <param name="ew">A char value specifying 'E' for east or 'W' for west.</param>
+            <returns>A double value representing the specified longitude.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromFile(System.String)">
+            <summary>
+            Loads the map data from the specified ESRI map file.
+            </summary>
+            <param name="fileName">The file name of the map file.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromFile(System.String,System.Boolean)">
+            <summary>
+            Loads the map data from the specified ESRI map file.
+            </summary>
+            <param name="fileName">The file name of the map file.</param>
+            <param name="loadDatabase">true to load the database associated with the specified map file, otherwise false.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromFile(System.String,System.Boolean,System.String)">
+            <summary>
+            Loads the map data from the specified ESRI map file.
+            </summary>
+            <param name="fileName">The file name of the map file.</param>
+            <param name="loadDatabase">true to load the database associated with the specified map file, otherwise false.</param>
+            <param name="labelField">A string specifying the name of the database column whose fields should be used as map element labels.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromFile(System.String,System.Boolean,System.Int32)">
+            <summary>
+            Loads the map data from the specified ESRI map file.
+            </summary>
+            <param name="fileName">The file name of the map file.</param>
+            <param name="loadDatabase">true to load the database associated with the specified map file, otherwise false.</param>
+            <param name="labelField">An integer specifying the index of the database column whose fields should be used as map element labels.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromStream(System.IO.Stream)">
+            <summary>
+            Loads the map data from the specified stream.
+            </summary>
+            <param name="stream">A System.IO.Stream instance representing shapefile data.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromStream(System.IO.Stream,System.IO.Stream,System.String)">
+            <summary>
+            Loads the map data from the specified stream.
+            </summary>
+            <param name="mapStream">A System.IO.Stream instance representing shapefile data.</param>
+            <param name="dbfStream">A System.IO.Stream instance representing the map database.</param>
+            <param name="labelField">Specifies the name of the database column containing labels of map elements.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.LoadFromXml(System.String)">
+            <summary>
+            Loads the map data from the specified OSM map file.
+            </summary>
+            <param name="fileName">The file name of the map file.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.SaveToFile(System.String)">
+            <summary>
+            Saves the map to the specified file.
+            </summary>
+            <param name="fileName">A string specifying the file name.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.AssignColors">
+            <summary>
+            Assigns colors to polygon shapes in the map in such a way that
+            no two adjacent polygons are painted in the same color.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.HitTest(MindFusion.Mapping.Point)">
+            <summary>
+            Returns the Shape that contains the specified point.
+            </summary>
+            <param name="point">A Point instance specifying location on the map.</param>
+            <returns>The Shape that contains the specified point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.HitTest(MindFusion.Mapping.Point,MindFusion.Mapping.ITransform)">
+            <summary>
+            Returns the Shape that contains the specified point.
+            </summary>
+            <param name="point">A Point instance specifying location on the map.</param>
+            <param name="transform">An ITransform specifying the transform used to render this map.</param>
+            <returns>The Shape that contains the specified point.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.ClearCache">
+            <summary>
+            Clears any cached values associated with the map for the current zoom level.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+            <param name="propertyName">A string specifying the name of the property whose value has changed.</param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.OnBeginLoad(System.EventArgs)">
+            <summary>
+            Raises the BeginLoad event.
+            </summary>
+            <param name="e">
+            An object providing the event data.
+            </param>
+        </member>
+        <member name="M:MindFusion.Mapping.Map.OnEndLoad(System.EventArgs)">
+            <summary>
+            Raises the EndLoad event.
+            </summary>
+            <param name="e">
+            An object providing the event data.
+            </param>
+        </member>
+        <member name="E:MindFusion.Mapping.Map.PropertyChanged">
+            <summary>
+            Raised when the value of a property of the Map class is changed.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Map.BeginLoad">
+            <summary>
+            Raised when the component starts loading map data from a file or memory stream.
+            </summary>
+        </member>
+        <member name="E:MindFusion.Mapping.Map.EndLoad">
+            <summary>
+            Raised when the component ends loading map data from a file or memory stream.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Map.BoundingBox">
+            <summary>
+            Returns the bounding box of all map shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Map.Shapes">
+            <summary>
+            Returns the list of map shapes.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Map.ShapeType">
+            <summary>
+            Returns the shape type associated with this map.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Map.Database">
+            <summary>
+            Gets or sets the DBF database associated with the map file.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.ShapeType">
+            <summary>
+            Specifies the type of shapes contained in an ESRI map file.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.NullShape">
+            <summary>
+            Indicates a null shape with no geometric data; often used as a
+            place holder until data becomes available.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.Point">
+            <summary>
+            Indicates a Point shape, which contains  X (longitude) and
+            Y (latitude) coordinates.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PolyLine">
+            <summary>
+            Indicates a Polyline shape, which contains several ordered
+            sets of points rendered as connected line segments.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.Polygon">
+            <summary>
+            Indicates a Polygon shape, which contains several ordered
+            sets of points rendered as filled polygons.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.MultiPoint">
+            <summary>
+            Indicates a MultiPoint shape, which contains a set of points.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PointZ">
+            <summary>
+            Indicates a PointZ shape, which is a Point with additional Z and measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PolyLineZ">
+            <summary>
+            Indicates a PolyLineZ shape, which is a PolyLine with additional Z and measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PolygonZ">
+            <summary>
+            Indicates a PolygonZ shape, which is a Polygon with additional Z and measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.MultiPointZ">
+            <summary>
+            Indicates a MultiPointZ shape, which is a MultiPoint with additional Z and measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PointM">
+            <summary>
+            Indicates a PointM shape, which is a Point with an additional measure attribute.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PolyLineM">
+            <summary>
+            Indicates a PolyLineM shape, which is a PolyLine with additional measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.PolygonM">
+            <summary>
+            Indicates a PolygonM shape, which is a Polygon with additional measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.MultiPointM">
+            <summary>
+            Indicates a MultiPointM shape, which is a MultiPoint with additional measure attributes.
+            </summary>
+        </member>
+        <member name="F:MindFusion.Mapping.ShapeType.MultiPatch">
+            <summary>
+            Indicates a MultiPatch shape, which consists of a number of surface patches.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.Row">
+            <summary>
+            Represents a DBF database row.
+            </summary>
+        </member>
+        <member name="P:MindFusion.Mapping.Row.Item(System.Int32)">
+            <summary>
+            Returns the data stored in the specified field.
+            </summary>
+            <param name="columnIndex">Specifies the index of the database column.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Row.Item(System.String)">
+            <summary>
+            Returns the data stored in the specified field.
+            </summary>
+            <param name="columnName">Specifies the name of the database column.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Row.Item(MindFusion.Mapping.Column)">
+            <summary>
+            Returns the data stored in the specified field.
+            </summary>
+            <param name="column">Specifies the database column.</param>
+            <returns>The string value of the specified field.</returns>
+        </member>
+        <member name="P:MindFusion.Mapping.Row.Index">
+            <summary>
+            Gets or sets the row index.
+            </summary>
+        </member>
+        <member name="T:MindFusion.Mapping.ITransform">
+            <summary>
+            Represents a geometrical transform used to convert world coordinates
+            to screen coordinates.
+            </summary>
+        </member>
+        <member name="M:MindFusion.Mapping.ITransform.WorldToDevice(MindFusion.Mapping.Point)">
+            <summary>
+            Convert a point from world to screen coordinates.
+            </summary>
+            <param name="point">A Point specifying world coordinates.</param>
+            <returns>A Point containing the corresponding screen coordinates.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ITransform.WorldToDevice(MindFusion.Mapping.Point[])">
+            <summary>
+            Convert an array of points from world to screen coordinates.
+            </summary>
+            <param name="points">An array of Point objects specifying world coordinates.</param>
+            <returns>An array of Point objects containing the corresponding screen coordinates.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ITransform.WorldToDevice(MindFusion.Mapping.Rect)">
+            <summary>
+            Convert a Rect instance from world to screen coordinates.
+            </summary>
+            <param name="rect">A Rect instance specifying world coordinates.</param>
+            <returns>A Rect instance containing the corresponding screen coordinates.</returns>
+        </member>
+        <member name="M:MindFusion.Mapping.ITransform.DeviceToWorld(MindFusion.Mapping.Point)">
+            <summary>
+            Convert a point from screen to world coordinates.
+            </summary>
+            <param name="point">A Point specifying screen coordinates.</param>
+            <returns>A Point containing the corresponding world coordinates.</returns>
+        </member>
+    </members>
+</doc>

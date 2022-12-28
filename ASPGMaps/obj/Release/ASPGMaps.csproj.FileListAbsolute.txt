@@ -1,0 +1,2 @@
+C:\Users\Munashe Nyazenga\Videos\ITSEdited\ASPGMaps\ASPGMaps\ASPGMaps\ASPGMaps\obj\Release\ASPGMaps.csproj.AssemblyReference.cache
+C:\Users\Munashe Nyazenga\Videos\ITSEdited\ASPGMaps\ASPGMaps\ASPGMaps\ASPGMaps\obj\Release\ASPGMaps.csproj.CoreCompileInputs.cache

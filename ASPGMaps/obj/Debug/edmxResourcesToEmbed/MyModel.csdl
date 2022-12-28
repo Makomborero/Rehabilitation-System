@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MyDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="HotelMasters" EntityType="MyDatabaseModel.HotelMaster" />
+  </EntityContainer>
+  <EntityType Name="HotelMaster">
+    <Key>
+      <PropertyRef Name="HotelID" />
+    </Key>
+    <Property Name="HotelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HotelArea" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HotelName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LocLat" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LocLong" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ReadMoreUrl" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>
